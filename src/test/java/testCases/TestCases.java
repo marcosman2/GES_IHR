@@ -41,7 +41,7 @@ public class TestCases {
 	public void newAssignee()
 	{
 		PageAssignee pageAssignee = new PageAssignee(driver);
-		pageAssignee.newAssignee("1/1/2018", "Alejandra", "Paz", "577845453023", "115219180109", "10/22/2000", "Argentina", "Buenos Aires");
+		pageAssignee.newAssignee("1/1/2018", "Alejandra", "Paz", "577845453021", "1152191801011", "10/22/2000", "Argentina", "Buenos Aires");
 		PageAssignment pageAssignment = new PageAssignment(driver);
 		pageAssignment.newAssignment("Australia", "Business Trip", "924731", "1/1/2018", "12/31/2018", "1/1/2018", "Org ONe|XYZ|", "Monthly", "AUSTRALIA", "Australia Capital Territory");
 		
