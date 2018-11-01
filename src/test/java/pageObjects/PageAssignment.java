@@ -5,6 +5,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -26,6 +27,7 @@ public class PageAssignment {
 	private By workLocationDrop;
 	private By taxStateDrop;
 	private By saveAssignmentButton;
+	private By assignmentMessageLabel;
 	
 	public PageAssignment(WebDriver driver)
 	{
@@ -43,6 +45,7 @@ public class PageAssignment {
 		this.workLocationDrop = By.id("ctl00_ctl00_ctl00_ctl00_ctl00_Main_MainContent_MainContent_MainContent_MainContent_workLocationDropDown_disp");
 		this.taxStateDrop = By.id("ctl00_ctl00_ctl00_ctl00_ctl00_Main_MainContent_MainContent_MainContent_MainContent_taxStateDropDown_disp");
 		this.saveAssignmentButton = By.id("ctl00_ctl00_ctl00_ctl00_ctl00_Main_MainContent_MainContent_MainContent_ButtonsContent_saveImageButton");
+		this.assignmentMessageLabel = By.xpath("//*[@id=\"ctl00_ctl00_ctl00_ctl00_ctl00_Main_MainContent_MainContent_MainContent_MainContent_validationSummary\"]/ul/li");
 	}
 	
 	public void newAssignment(String assignmentName, String assignmentType, String assignmentIdent, String estimatedBegin, String estimatedEnd, String actualBegin, String homeOrg, String payCycle, String workLocation, String taxState)
@@ -56,6 +59,7 @@ public class PageAssignment {
 		Helpers helper = new Helpers(driver);
 		helper.waitingTime(2);
 		assignmentWait.sendKeys(Keys.TAB);
+		//new Actions (driver).moveToElement((WebElement) assignmentTypeDrop).perform();
 		helper.waitingTime(2);
 		driver.findElement(assignmentTypeDrop).sendKeys(assignmentType);
 		helper.waitingTime(1);
@@ -90,6 +94,16 @@ public class PageAssignment {
 		helper.waitingTime(1);
 		((JavascriptExecutor)driver).executeScript("scroll(0,300)");
 		driver.findElement(saveAssignmentButton).click();
+		WebElement messageDisplayed = wait.until(ExpectedConditions.visibilityOfElementLocated(assignmentMessageLabel));
+		String message = messageDisplayed.getText();
+		if (message.equals("Save completed successfully."))
+		{
+			helper.screenshotcapture("Assignee Assignment Created_");
+		}
+		else
+		{
+			helper.screenshotcapture("ISSUE_Assignee Assignment Not Created_");
+		}
 		
 		
 	}

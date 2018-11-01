@@ -2,20 +2,127 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="testCases.TestCases" duration-ms="70707" started-at="2018-10-27T15:14:42Z" finished-at="2018-10-27T15:15:52Z">
+  <suite name="testCases.TestsDataDriven" duration-ms="68098" started-at="2018-10-31T04:44:45Z" finished-at="2018-10-31T04:45:53Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="70707" started-at="2018-10-27T15:14:42Z" finished-at="2018-10-27T15:15:52Z">
-      <class name="testCases.TestCases">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:testCases.TestCases@5f2050f6]" name="setUp" is-config="true" duration-ms="34112" started-at="2018-10-27T15:14:42Z" finished-at="2018-10-27T15:15:16Z">
+    <test name="Command line test" duration-ms="68098" started-at="2018-10-31T04:44:45Z" finished-at="2018-10-31T04:45:53Z">
+      <class name="testCases.TestsDataDriven">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:testCases.TestsDataDriven@64616ca2]" name="setUp" is-config="true" duration-ms="8535" started-at="2018-10-31T04:44:46Z" finished-at="2018-10-31T04:44:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="newAssignee()[pri:0, instance:testCases.TestCases@5f2050f6]" name="newAssignee" duration-ms="36540" started-at="2018-10-27T15:15:16Z" finished-at="2018-10-27T15:15:52Z">
+        <test-method status="PASS" signature="newAssigneeAssignmentPolicy(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testCases.TestsDataDriven@64616ca2]" name="newAssigneeAssignmentPolicy" duration-ms="58339" started-at="2018-10-31T04:44:54Z" data-provider="getDataAssigneeAssignmentPolicy" finished-at="2018-10-31T04:45:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1/01/18]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Mateo]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Ferreira]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[17032018J]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[722891K]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[12/31/1983]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Argentina]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Buenos Aires]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Australia]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Business Trip]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[924731L]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[1/1/2017]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[12/31/2018]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[1/1/2017]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[Org ONe|XYZ|]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[AUSTRALIA]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[Australia Capital Territory]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[2010 - 2030]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[1/1/2018]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[12/31/2018]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- newAssignee -->
-      </class> <!-- testCases.TestCases -->
+        </test-method> <!-- newAssigneeAssignmentPolicy -->
+      </class> <!-- testCases.TestsDataDriven -->
     </test> <!-- Command line test -->
-  </suite> <!-- testCases.TestCases -->
+  </suite> <!-- testCases.TestsDataDriven -->
 </testng-results>

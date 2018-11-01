@@ -1,26 +1,27 @@
 package testCases;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import helpers.Helpers;
+import dataDriven.DataDriven;
+import dataDriven.DataDriven;
 import pageObjects.PageAssignee;
 import pageObjects.PageAssigneePolicy;
 import pageObjects.PageAssignment;
 import pageObjects.PageLogin;
 
-
-public class TestCases {
-
+public class TestsDataDriven {
+	
 	private WebDriver driver;
-	//----------------------Pasos que se ejecutan siempre al inicio----------------------------
 	
 	@BeforeMethod
 	public void setUp()
@@ -37,27 +38,28 @@ public class TestCases {
 		driver.findElement(By.xpath("//*[@id=\"MasterMenu\"]/ul/li[1]/a")).click();
 		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 	}
+
+	//********************************DATA DRIVEN TEST CASES*********************************************
 	
-	//-------------------------------TEST CASES-----------------------------------------------------
+			//----------Creación de Assignee Assignment y Asociación de Policy------------
 	
-	@Test
-	public void newAssignee()
+	@DataProvider
+	public Iterator<Object[]> getDataAssigneeAssignmentPolicy()
 	{
-		PageAssignee pageAssignee = new PageAssignee(driver);
-		pageAssignee.newAssignee("1/1/2018", "Alejandra", "Paz", "577845453011", "1152191801021", "10/22/2000", "Argentina", "Buenos Aires");
-		PageAssignment pageAssignment = new PageAssignment(driver);
-		pageAssignment.newAssignment("Australia", "Business Trip", "924731", "1/1/2018", "12/31/2018", "1/1/2018", "Org ONe|XYZ|", "Monthly", "AUSTRALIA", "Australia Capital Territory");
-		PageAssigneePolicy pageAssigneePolicy = new PageAssigneePolicy(driver);
-		pageAssigneePolicy.newAssigneeAssignmentPolicy("2010 - 2030", "1/1/2018", "12/31/2018");
-		
+		ArrayList<Object[]> testData = DataDriven.dataReaderAssigneeAssignmentPolicy();
+		return testData.iterator();
 	}
 	
-	/*@AfterMethod
-	public void tearDown()
+	@Test(dataProvider="getDataAssigneeAssignmentPolicy")
+	public void newAssigneeAssignmentPolicy(String effectiveDate, String firstName, String surname, String social, String id, String dob, String homeCntry, String homeSt, String assignment, String type, String identifier, String estimatedBegin, String estimatedEnd, String actualBegin, String homeOrg, String payCycle, String workLoc, String taxSt, String policy, String policyFrom, String policyTo)
 	{
-		Helpers helper = new Helpers (driver);
-		helper.waitingTime(10);
-		helper.screenshotcapture("Finished_");
-		driver.quit();
-	}*/
+		PageAssignee pageAssignee = new PageAssignee(driver);
+		DataDriven.dataReaderAssigneeAssignmentPolicy();
+		pageAssignee.newAssignee(effectiveDate, firstName, surname, social, id, dob, homeCntry, homeSt);
+		PageAssignment pageAssignment = new PageAssignment(driver);
+		pageAssignment.newAssignment(assignment, type, identifier, estimatedBegin, estimatedEnd, actualBegin, homeOrg, payCycle, workLoc, taxSt);
+		PageAssigneePolicy pageAssigneePolicy = new PageAssigneePolicy(driver);
+		pageAssigneePolicy.newAssigneeAssignmentPolicy(policy, policyFrom, policyTo);
+		
+	}
 }
