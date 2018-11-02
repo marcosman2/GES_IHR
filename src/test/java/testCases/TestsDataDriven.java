@@ -8,11 +8,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import dataDriven.DataDriven;
+import helpers.Helpers;
 import dataDriven.DataDriven;
 import pageObjects.PageAssignee;
 import pageObjects.PageAssigneePolicy;
@@ -41,7 +43,25 @@ public class TestsDataDriven {
 
 	//********************************DATA DRIVEN TEST CASES*********************************************
 	
-			//----------Creación de Assignee Assignment y Asociación de Policy------------
+	//--------------------------Creación de Assignee-----------------------------------
+	
+	@DataProvider
+	public Iterator<Object[]> getDataAssignee()
+	{
+		ArrayList<Object[]> testData = DataDriven.dataReaderAssignee();
+		return testData.iterator();
+	}
+	
+	@Test(dataProvider="getDataAssignee")
+	public void newAssignee(String effectiveDate, String firstName, String surname, String social, String id, String dob, String homeCntry, String homeSt)
+	{
+		PageAssignee pageAssignee = new PageAssignee(driver);
+		DataDriven.dataReaderAssigneeAssignmentPolicy();
+		pageAssignee.newAssignee(effectiveDate, firstName, surname, social, id, dob, homeCntry, homeSt);		
+	}
+	
+	
+	//-----------------Creación de Assignee Assignment y Asociación de Policy--------------------------------
 	
 	@DataProvider
 	public Iterator<Object[]> getDataAssigneeAssignmentPolicy()
@@ -59,7 +79,17 @@ public class TestsDataDriven {
 		PageAssignment pageAssignment = new PageAssignment(driver);
 		pageAssignment.newAssignment(assignment, type, identifier, estimatedBegin, estimatedEnd, actualBegin, homeOrg, payCycle, workLoc, taxSt);
 		PageAssigneePolicy pageAssigneePolicy = new PageAssigneePolicy(driver);
-		pageAssigneePolicy.newAssigneeAssignmentPolicy(policy, policyFrom, policyTo);
-		
+		pageAssigneePolicy.newAssigneeAssignmentPolicy(policy, policyFrom, policyTo);		
 	}
+
+	@AfterMethod
+	public void tearDown()
+	{
+		Helpers helper = new Helpers (driver);
+		helper.waitingTime(5);
+		helper.screenshotcapture("Finished_");
+		driver.quit();
+	}
+
 }
+

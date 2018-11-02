@@ -29,7 +29,11 @@ public class DataDriven {
 	public static String policyFrom;
 	public static String policyTo;
 	
-	public static ArrayList<Object[]> dataReaderAssigneeAssignmentPolicy()
+	//-----------------------------MÉTODOS PARA LEER LOS DATOS DE EXCEL---------------------------------------------------------
+	
+	//-------------------------------------Método para leer los datos de un Assignee-----------------------------------
+	
+	public static ArrayList<Object[]> dataReaderAssignee()
 	{
 		ArrayList<Object[]> data = new ArrayList<Object[]>();
 		try
@@ -52,28 +56,58 @@ public class DataDriven {
 			assigneeBirthDate = reader.getCellData("Assignee", "Birth_Date", rowNum);
 			assigneeHomeCountry = reader.getCellData("Assignee", "Home_Country", rowNum);
 			assigneeHomeState = reader.getCellData("Assignee", "Home_State", rowNum);
-			assignmentName = reader.getCellData("Assignee", "Assignment_Name", rowNum);
-			assignmentType = reader.getCellData("Assignee", "Assignment_Type", rowNum);
-			assignmentIdentifier = reader.getCellData("Assignee", "Assignment_Identifier", rowNum);
-			assignmentEstimatedBegin = reader.getCellData("Assignee", "Estimated_Begin_Date", rowNum);
-			assignmentEstimatedEnd = reader.getCellData("Assignee", "Estimated_End_Date", rowNum);
-			assignmentActualBegin = reader.getCellData("Assignee", "Actual_Begin_Date", rowNum);
-			assignmentHomeOrganization = reader.getCellData("Assignee", "Home_Organization", rowNum);
-			assignmentPayCycle = reader.getCellData("Assignee", "Pay_Cycle", rowNum);
-			assignmentWorkLocation = reader.getCellData("Assignee", "Work_Location", rowNum);
-			assignmentTaxState = reader.getCellData("Assignee", "Tax_State", rowNum);
-			policyName = reader.getCellData("Assignee", "Policy_Name", rowNum);
-			policyFrom = reader.getCellData("Assignee", "From_Date", rowNum);
-			policyTo = reader.getCellData("Assignee", "To_Date", rowNum);
+			
+			Object ob[] = {assigneeEffectiveDate , assigneeFirstName, assigneeSurname, assigneeSocialNumber, assigneeIdNumber, assigneeBirthDate, assigneeHomeCountry, assigneeHomeState};
+			data.add(ob);
+			
+		}
+		return data;		
+	}
+	
+	//-------------------------------------Método para leer los datos de un AA Policy-----------------------------------
+	
+	public static ArrayList<Object[]> dataReaderAssigneeAssignmentPolicy()
+	{
+		ArrayList<Object[]> data = new ArrayList<Object[]>();
+		try
+		{
+		reader = new Xls_Reader("C:\\Users\\mamanrique\\eclipse-workspace\\IHR\\src\\test\\java\\helpers\\IHR_Data.xlsx");
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		int rowCount = reader.getRowCount("AAPolicy");
+		for (int rowNum = 2; rowNum<= rowCount; rowNum++)
+		{
+			
+			assigneeEffectiveDate = reader.getCellData("AAPolicy", "Effective_Date", rowNum);
+			assigneeFirstName = reader.getCellData("AAPolicy", "First_Name", rowNum);
+			assigneeSurname = reader.getCellData("AAPolicy", "Surname", rowNum);
+			assigneeSocialNumber = reader.getCellData("AAPolicy", "Social_Number", rowNum);
+			assigneeIdNumber = reader.getCellData("AAPolicy", "Id_Number", rowNum);
+			assigneeBirthDate = reader.getCellData("AAPolicy", "Birth_Date", rowNum);
+			assigneeHomeCountry = reader.getCellData("AAPolicy", "Home_Country", rowNum);
+			assigneeHomeState = reader.getCellData("AAPolicy", "Home_State", rowNum);
+			assignmentName = reader.getCellData("AAPolicy", "Assignment_Name", rowNum);
+			assignmentType = reader.getCellData("AAPolicy", "Assignment_Type", rowNum);
+			assignmentIdentifier = reader.getCellData("AAPolicy", "Assignment_Identifier", rowNum);
+			assignmentEstimatedBegin = reader.getCellData("AAPolicy", "Estimated_Begin_Date", rowNum);
+			assignmentEstimatedEnd = reader.getCellData("AAPolicy", "Estimated_End_Date", rowNum);
+			assignmentActualBegin = reader.getCellData("AAPolicy", "Actual_Begin_Date", rowNum);
+			assignmentHomeOrganization = reader.getCellData("AAPolicy", "Home_Organization", rowNum);
+			assignmentPayCycle = reader.getCellData("AAPolicy", "Pay_Cycle", rowNum);
+			assignmentWorkLocation = reader.getCellData("AAPolicy", "Work_Location", rowNum);
+			assignmentTaxState = reader.getCellData("AAPolicy", "Tax_State", rowNum);
+			policyName = reader.getCellData("AAPolicy", "Policy_Name", rowNum);
+			policyFrom = reader.getCellData("AAPolicy", "From_Date", rowNum);
+			policyTo = reader.getCellData("AAPolicy", "To_Date", rowNum);
 			
 			Object ob[] = {assigneeEffectiveDate , assigneeFirstName, assigneeSurname, assigneeSocialNumber, assigneeIdNumber, assigneeBirthDate, assigneeHomeCountry, assigneeHomeState, assignmentName, assignmentType, assignmentIdentifier, assignmentEstimatedBegin, assignmentEstimatedEnd, assignmentActualBegin, assignmentHomeOrganization, assignmentPayCycle, assignmentWorkLocation, assignmentTaxState, policyName, policyFrom, policyTo};
 			data.add(ob);
 			
 		}
 		return data;		
-		
 	}
 	
-	
-
 }

@@ -41,7 +41,7 @@ public class TestCases {
 	//-------------------------------TEST CASES-----------------------------------------------------
 	
 	@Test
-	public void newAssignee()
+	public void newAssigneessignmentPolicy()
 	{
 		PageAssignee pageAssignee = new PageAssignee(driver);
 		pageAssignee.newAssignee("1/1/2018", "Alejandra", "Paz", "577845453011", "1152191801021", "10/22/2000", "Argentina", "Buenos Aires");

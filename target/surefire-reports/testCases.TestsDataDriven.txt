@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: testCases.TestsDataDriven
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 68.886 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 77.788 sec

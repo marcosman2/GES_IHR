@@ -86,30 +86,35 @@ public class Xls_Reader {
 
             if(cell==null)
                 return "";
-            //System.out.println(cell.getCellType());
+            
+            String cellText;
             if(cell.getCellType()== CellType.STRING)
                 return cell.getStringCellValue();
             else if(cell.getCellType()== CellType.NUMERIC || cell.getCellType()== CellType.FORMULA ){
-
-                String cellText  = String.valueOf(cell.getNumericCellValue());
+                Double cellValue = cell.getNumericCellValue();
+            	if(cellValue - Math.floor(cellValue) == 0){
+            		String strCell = cellValue+"";
+            		int indexDecimal = strCell.indexOf(".");
+            		int noDecimal = Integer.parseInt(strCell.substring(0, indexDecimal));
+            		cellText  = String.valueOf(noDecimal);
+            		
+            	}
+            	else
+            	{
+            		cellText  = String.valueOf(cell.getNumericCellValue()); //Convierte a String el valor numérico de la celda
+            	}	
+                
                 if (HSSFDateUtil.isCellDateFormatted(cell)) {
-                    // format in form of M/D/YY
-                    double d = cell.getNumericCellValue();
-
+                        	
+                	double d = cell.getNumericCellValue();
                     Calendar cal =Calendar.getInstance();
                     cal.setTime(HSSFDateUtil.getJavaDate(d));
-                    cellText =
-                            (String.valueOf(cal.get(Calendar.YEAR))).substring(2);
-                    cellText = cal.get(Calendar.DAY_OF_MONTH) + "/" +
-                            cal.get(Calendar.MONTH)+1 + "/" +
+                    cellText = (String.valueOf(cal.get(Calendar.YEAR)));
+                    cellText = cal.get(Calendar.MONTH)+1 + "/" +
+                            cal.get(Calendar.DAY_OF_MONTH) + "/" +
                             cellText;
 
-                    //System.out.println(cellText);
-
                 }
-
-
-
                 return cellText;
             }else if(cell.getCellType()== CellType.BLANK)
                 return "";
