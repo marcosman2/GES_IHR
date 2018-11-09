@@ -31,11 +31,11 @@ public class TestsDataDriven {
 		DesiredCapabilities caps = new DesiredCapabilities();
 		System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver.exe");
 		driver = new ChromeDriver();
-		driver.navigate().to("https://app2.iastax.com/SingleSiteOne/GlobalAdvantageIHR/GAShare/Portal/Userlogin.aspx?ClientId=GLTSTUSER23");
+		driver.navigate().to("https://dgaexpatriateapp.deloitte.com/SingleSiteOne/GlobalAdvantageIHR/GAShare/Portal/Userlogin.aspx?ClientID=IHRDEV1GAE6");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		PageLogin pageLogin = new PageLogin(driver);
-		pageLogin.login("psup", "B8j$#8ft");
+		pageLogin.login("psup", "A7h*%2UF");
 		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 		driver.findElement(By.xpath("//*[@id=\"MasterMenu\"]/ul/li[1]/a")).click();
 		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
@@ -60,6 +60,25 @@ public class TestsDataDriven {
 		pageAssignee.newAssignee(effectiveDate, firstName, surname, social, id, dob, homeCntry, homeSt);		
 	}
 	
+	//-----------------Creación de Assignee Assignment--------------------------------
+	
+		@DataProvider
+		public Iterator<Object[]> getDataAssigneeAssignment()
+		{
+			ArrayList<Object[]> testData = DataDriven.dataReaderAssigneeAssignment();
+			return testData.iterator();
+		}
+		
+		@Test(dataProvider="getDataAssigneeAssignment")
+		public void newAssigneeAssignment(String effectiveDate, String firstName, String surname, String social, String id, String dob, String homeCntry, String homeSt, String assignment, String type, String identifier, String estimatedBegin, String estimatedEnd, String actualBegin, String homeOrg, String payCycle, String workLoc, String taxSt)
+		{
+			PageAssignee pageAssignee = new PageAssignee(driver);
+			DataDriven.dataReaderAssigneeAssignmentPolicy();
+			pageAssignee.newAssignee(effectiveDate, firstName, surname, social, id, dob, homeCntry, homeSt);
+			PageAssignment pageAssignment = new PageAssignment(driver);
+			pageAssignment.newAssignment(assignment, type, identifier, estimatedBegin, estimatedEnd, actualBegin, homeOrg, payCycle, workLoc, taxSt);		
+		}
+	
 	
 	//-----------------Creación de Assignee Assignment y Asociación de Policy--------------------------------
 	
@@ -82,12 +101,14 @@ public class TestsDataDriven {
 		pageAssigneePolicy.newAssigneeAssignmentPolicy(policy, policyFrom, policyTo);		
 	}
 
+	
+	//------------------------Pasos que se ejecutan siempre al final------------------------------------
 	@AfterMethod
 	public void tearDown()
 	{
 		Helpers helper = new Helpers (driver);
-		helper.waitingTime(5);
-		helper.screenshotcapture("Finished_");
+		helper.waitingTime(3);
+		//helper.screenshotcapture("Finished_");
 		driver.quit();
 	}
 

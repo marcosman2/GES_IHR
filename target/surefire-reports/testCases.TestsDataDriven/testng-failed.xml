@@ -6,7 +6,7 @@
       <class name="testCases.TestsDataDriven">
         <methods>
           <include name="setUp"/>
-          <include name="newAssigneeAssignmentPolicy" invocation-numbers="0"/>
+          <include name="newAssigneeAssignmentPolicy" invocation-numbers="12 14 24"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- testCases.TestsDataDriven -->

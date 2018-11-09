@@ -64,6 +64,49 @@ public class DataDriven {
 		return data;		
 	}
 	
+	//-------------------------------------Método para leer los datos de un Assignee Assignment-----------------------------------
+	
+		public static ArrayList<Object[]> dataReaderAssigneeAssignment()
+		{
+			ArrayList<Object[]> data = new ArrayList<Object[]>();
+			try
+			{
+			reader = new Xls_Reader("C:\\Users\\mamanrique\\eclipse-workspace\\IHR\\src\\test\\java\\helpers\\IHR_Data.xlsx");
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+			}
+			int rowCount = reader.getRowCount("AA");
+			for (int rowNum = 2; rowNum<= rowCount; rowNum++)
+			{
+				
+				assigneeEffectiveDate = reader.getCellData("AA", "Effective_Date", rowNum);
+				assigneeFirstName = reader.getCellData("AA", "First_Name", rowNum);
+				assigneeSurname = reader.getCellData("AA", "Surname", rowNum);
+				assigneeSocialNumber = reader.getCellData("AA", "Social_Number", rowNum);
+				assigneeIdNumber = reader.getCellData("AA", "Id_Number", rowNum);
+				assigneeBirthDate = reader.getCellData("AA", "Birth_Date", rowNum);
+				assigneeHomeCountry = reader.getCellData("AA", "Home_Country", rowNum);
+				assigneeHomeState = reader.getCellData("AA", "Home_State", rowNum);
+				assignmentName = reader.getCellData("AA", "Assignment_Name", rowNum);
+				assignmentType = reader.getCellData("AA", "Assignment_Type", rowNum);
+				assignmentIdentifier = reader.getCellData("AA", "Assignment_Identifier", rowNum);
+				assignmentEstimatedBegin = reader.getCellData("AA", "Estimated_Begin_Date", rowNum);
+				assignmentEstimatedEnd = reader.getCellData("AA", "Estimated_End_Date", rowNum);
+				assignmentActualBegin = reader.getCellData("AAP", "Actual_Begin_Date", rowNum);
+				assignmentHomeOrganization = reader.getCellData("AA", "Home_Organization", rowNum);
+				assignmentPayCycle = reader.getCellData("AA", "Pay_Cycle", rowNum);
+				assignmentWorkLocation = reader.getCellData("AA", "Work_Location", rowNum);
+				assignmentTaxState = reader.getCellData("AA", "Tax_State", rowNum);
+				
+				Object ob[] = {assigneeEffectiveDate , assigneeFirstName, assigneeSurname, assigneeSocialNumber, assigneeIdNumber, assigneeBirthDate, assigneeHomeCountry, assigneeHomeState, assignmentName, assignmentType, assignmentIdentifier, assignmentEstimatedBegin, assignmentEstimatedEnd, assignmentActualBegin, assignmentHomeOrganization, assignmentPayCycle, assignmentWorkLocation, assignmentTaxState};
+				data.add(ob);
+				
+			}
+			return data;		
+		}
+	
 	//-------------------------------------Método para leer los datos de un AA Policy-----------------------------------
 	
 	public static ArrayList<Object[]> dataReaderAssigneeAssignmentPolicy()
