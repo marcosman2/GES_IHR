@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -44,6 +46,21 @@ public class Helpers {
 		{
 			e.printStackTrace();
 		}
+	}
+	
+	//------------------------MÉTODO PARA VALIDAR EXISTENCIA DE UN ELEMENTO--------------------------
+	
+	public boolean elementExists(String id)
+	{
+		try
+		{
+			driver.findElement(By.id(id));
+		}
+		catch(NoSuchElementException e)
+		{
+			return false;
+		}
+		return true;
 	}
 
 }

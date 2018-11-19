@@ -15,6 +15,7 @@ import pageObjects.PageAssignee;
 import pageObjects.PageAssigneePolicy;
 import pageObjects.PageAssignment;
 import pageObjects.PageLogin;
+import pageObjects.PagePolicies;
 
 
 public class TestCases {
@@ -28,11 +29,11 @@ public class TestCases {
 		DesiredCapabilities caps = new DesiredCapabilities();
 		System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver.exe");
 		driver = new ChromeDriver();
-		driver.navigate().to("https://dgaexpatriateapp.deloitte.com/SingleSiteOne/GlobalAdvantageIHR/GAShare/Portal/Userlogin.aspx?ClientID=IHRDEV1GAE6");
+		driver.navigate().to("https://app2.iastax.com/SingleSiteOne/GlobalAdvantageIHR/GAShare/Portal/Userlogin.aspx?ClientId=GLTSTUSER23");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		PageLogin pageLogin = new PageLogin(driver);
-		pageLogin.login("psup", "A7h*%2UF");
+		pageLogin.login("psup", "B8j$#8ft");
 		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 		driver.findElement(By.xpath("//*[@id=\"MasterMenu\"]/ul/li[1]/a")).click();
 		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
@@ -73,13 +74,21 @@ public class TestCases {
 	}
 	
 	
+	//------------------------------Creación de Policy--------------------------------------------------------
+	@Test
+	public void newPolicy()
+	{
+		PagePolicies pagePolicies = new PagePolicies(driver);
+		pagePolicies.newPolicy("Automated Policy10", "United States Dollar", "1/1/2018", "12/31/2018", "2", "Net Pay", "zzzAlimony Received", "zzzAnnual Paid Premium", "zzzAnnuities", "zzzAuto Loan Advance", "zzzAutomobile Expense", "zzzBase Salary", "zzzBonus - Current Year", "zzzEducation Trip", "zzzEntertainment Allowance");
+	}
+	
 	//-------------------------Pasos que se ejecutan siempre al final-----------------------------------------------------------
-	@AfterMethod
+	/*@AfterMethod
 	public void tearDown()
 	{
 		Helpers helper = new Helpers (driver);
 		helper.waitingTime(3);
 		helper.screenshotcapture("Finished_");
 		driver.quit();
-	}
+	}*/
 }
