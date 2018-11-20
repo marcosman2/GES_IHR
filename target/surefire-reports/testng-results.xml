@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="3" total="4" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="testCases.TestCases" duration-ms="153650" started-at="2018-11-16T20:52:41Z" finished-at="2018-11-16T20:55:15Z">
+  <suite name="testCases.TestCases" duration-ms="50497" started-at="2018-11-19T20:33:17Z" finished-at="2018-11-19T20:34:08Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="153650" started-at="2018-11-16T20:52:41Z" finished-at="2018-11-16T20:55:15Z">
+    <test name="Command line test" duration-ms="50497" started-at="2018-11-19T20:33:17Z" finished-at="2018-11-19T20:34:08Z">
       <class name="testCases.TestCases">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:testCases.TestCases@5d624da6]" name="setUp" is-config="true" duration-ms="13697" started-at="2018-11-16T20:52:41Z" finished-at="2018-11-16T20:52:55Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:testCases.TestCases@5d624da6]" name="setUp" is-config="true" duration-ms="6603" started-at="2018-11-19T20:33:17Z" finished-at="2018-11-19T20:33:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="newPolicy()[pri:0, instance:testCases.TestCases@5d624da6]" name="newPolicy" duration-ms="139895" started-at="2018-11-16T20:52:55Z" finished-at="2018-11-16T20:55:15Z">
+        <test-method status="PASS" signature="newPolicy()[pri:0, instance:testCases.TestCases@5d624da6]" name="newPolicy" duration-ms="43849" started-at="2018-11-19T20:33:24Z" finished-at="2018-11-19T20:34:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- newPolicy -->

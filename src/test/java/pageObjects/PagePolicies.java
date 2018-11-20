@@ -2,6 +2,7 @@ package pageObjects;
 
 import java.util.Iterator;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -131,15 +132,17 @@ public class PagePolicies {
 		helper.waitingTime(2);
 		driver.findElement(covarNumberDrop).sendKeys(Keys.TAB);
 		driver.findElement(addCovarButton).click();
-		WebElement firstCovar = wait.until(ExpectedConditions.presenceOfElementLocated(paymentDescDrop1));
-		boolean covar1Added = helper.elementExists("ctl00_ctl00_ctl00_ctl00_Main_MainContent_MainContent_MainContent_DetailsDataGrid_ctl03_DescNameDropDown_disp");
+		WebDriverWait wait4 = new WebDriverWait(driver, 3);
+		WebElement covar_1 = wait4.until(ExpectedConditions.presenceOfElementLocated(paymentDescDrop1));
+		
 		try
 		{
-			firstCovar.sendKeys(covar1);
+			covar_1.sendKeys(covar1);
 			helper.waitingTime(1);
-			firstCovar.sendKeys(Keys.TAB);
+			covar_1.sendKeys(Keys.TAB);
 			driver.findElement(activeCovarCheck1).click();
 			((JavascriptExecutor)driver).executeScript("scroll(0,300)");
+			driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 			try
 			{
 				driver.findElement(paymentDescDrop2).sendKeys(covar2);
@@ -194,24 +197,24 @@ public class PagePolicies {
 												helper.waitingTime(1);
 												driver.findElement(paymentDescDrop10).sendKeys(Keys.TAB);
 												driver.findElement(activeCovarCheck10).click();
-											}catch(NoSuchElementException e){System.out.println("Just 9 Covars.");}	
-											
+											}catch(NoSuchElementException e){System.out.println("Just 9 Covars.");}												
+													
 										}catch(NoSuchElementException e){System.out.println("Just 8 Covars.");} 
-										
+												
 									}catch(NoSuchElementException e){System.out.println("Just 7 Covars.");} 
-									
+											
 								}catch(NoSuchElementException e){System.out.println("Just 6 Covars.");}
-								
+										
 							}catch(NoSuchElementException e){System.out.println("Just 5 Covars.");}
-							
+									
 						}catch(NoSuchElementException e){System.out.println("Just 4 Covars.");}
-						
+								
 					}catch(NoSuchElementException e){System.out.println("Just 3 Covars.");} 
-					
+							
 				}catch(NoSuchElementException e){System.out.println("Just 2 Covars.");} 
-				
+						
 			}catch(NoSuchElementException e){System.out.println("Just 1 Covar.");}
-			
+					
 		}catch(NoSuchElementException e){}
 		
 		driver.findElement(savePolicyButton).click();

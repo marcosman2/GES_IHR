@@ -79,7 +79,7 @@ public class TestCases {
 	public void newPolicy()
 	{
 		PagePolicies pagePolicies = new PagePolicies(driver);
-		pagePolicies.newPolicy("Automated Policy10", "United States Dollar", "1/1/2018", "12/31/2018", "2", "Net Pay", "zzzAlimony Received", "zzzAnnual Paid Premium", "zzzAnnuities", "zzzAuto Loan Advance", "zzzAutomobile Expense", "zzzBase Salary", "zzzBonus - Current Year", "zzzEducation Trip", "zzzEntertainment Allowance");
+		pagePolicies.newPolicy("Automated Policy23", "United States Dollar", "1/1/2018", "12/31/2018", "10", "Net Pay", "zzzAlimony Received", "zzzAnnual Paid Premium", "zzzAnnuities", "zzzAuto Loan Advance", "zzzAutomobile Expense", "zzzBase Salary", "zzzBonus - Current Year", "zzzEducation Trip", "zzzEntertainment Allowance");
 	}
 	
 	//-------------------------Pasos que se ejecutan siempre al final-----------------------------------------------------------
