@@ -103,7 +103,8 @@ public class PagePolicies {
 		policiesMenuLink.click();
 		WebElement addPolicy = wait.until(ExpectedConditions.presenceOfElementLocated(addPolicyButton));
 		addPolicy.click();
-		WebElement policyName = wait.until(ExpectedConditions.elementToBeClickable(policyNameField));
+		WebDriverWait wait2 = new WebDriverWait(driver, 60);
+		WebElement policyName = wait2.until(ExpectedConditions.elementToBeClickable(policyNameField));
 		policyName.sendKeys(policy);
 		driver.findElement(colorIcon).click();
 		Set <String> handler = driver.getWindowHandles();
