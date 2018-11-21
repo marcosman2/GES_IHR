@@ -20,6 +20,7 @@ import pageObjects.PageAssignee;
 import pageObjects.PageAssigneePolicy;
 import pageObjects.PageAssignment;
 import pageObjects.PageLogin;
+import pageObjects.PagePolicies;
 
 public class TestsDataDriven {
 	
@@ -100,7 +101,23 @@ public class TestsDataDriven {
 		PageAssigneePolicy pageAssigneePolicy = new PageAssigneePolicy(driver);
 		pageAssigneePolicy.newAssigneeAssignmentPolicy(policy, policyFrom, policyTo);		
 	}
-
+	
+	//-----------------------Creación de Policy-------------------------------------------
+	
+	@DataProvider
+	public Iterator<Object[]> getDataPolicy()
+	{
+		ArrayList<Object[]> testData = DataDriven.dataReaderPolicy();
+		return testData.iterator();
+	}
+	
+	@Test(dataProvider="getDataPolicy")
+	public void newPolicies(String policy, String currency, String beginDate, String endDate, String covarNumber, String covar1, String covar2, String covar3, String covar4, String covar5, String covar6, String covar7, String covar8, String covar9, String covar10)
+	{
+		PagePolicies pagePolicies = new PagePolicies(driver);
+		DataDriven.dataReaderPolicy();
+		pagePolicies.newPolicy(policy, currency, beginDate, endDate, covarNumber, covar1, covar2, covar3, covar4, covar5, covar6, covar7, covar8, covar9, covar10);
+	}
 	
 	//------------------------Pasos que se ejecutan siempre al final------------------------------------
 	@AfterMethod

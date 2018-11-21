@@ -28,6 +28,21 @@ public class DataDriven {
 	public static String policyName;
 	public static String policyFrom;
 	public static String policyTo;
+	public static String policy_Name;
+	public static String policy_Currency;
+	public static String policy_From;
+	public static String policy_To;
+	public static String policy_CovarsNumber;
+	public static String policy_Covar1;
+	public static String policy_Covar2;
+	public static String policy_Covar3;
+	public static String policy_Covar4;
+	public static String policy_Covar5;
+	public static String policy_Covar6;
+	public static String policy_Covar7;
+	public static String policy_Covar8;
+	public static String policy_Covar9;
+	public static String policy_Covar10;
 	
 	//-----------------------------MÉTODOS PARA LEER LOS DATOS DE EXCEL---------------------------------------------------------
 	
@@ -151,6 +166,47 @@ public class DataDriven {
 			
 		}
 		return data;		
+	}
+	
+	//---------------------------Método para leer los datos de un Policy----------------------------------------
+	
+	public static ArrayList<Object[]> dataReaderPolicy()
+	{
+		ArrayList<Object[]> data = new ArrayList<Object[]>();
+		try
+		{
+		reader = new Xls_Reader("C:\\Users\\mamanrique\\eclipse-workspace\\IHR\\src\\test\\java\\helpers\\IHR_Data.xlsx");
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		int rowCount = reader.getRowCount("Policy");
+		for (int rowNum = 2; rowNum<= rowCount; rowNum++)
+		{
+			
+			policy_Name = reader.getCellData("Policy", "Policy_Name", rowNum);
+			policy_Currency = reader.getCellData("Policy", "Policy_Currency", rowNum);
+			policy_From = reader.getCellData("Policy", "From_Date", rowNum);
+			policy_To = reader.getCellData("Policy", "To_Date", rowNum);
+			policy_CovarsNumber = reader.getCellData("Policy", "Covars_Number", rowNum);
+			policy_Covar1 = reader.getCellData("Policy", "Covar1", rowNum);
+			policy_Covar2 = reader.getCellData("Policy", "Covar2", rowNum);
+			policy_Covar3 = reader.getCellData("Policy", "Covar3", rowNum);
+			policy_Covar4 = reader.getCellData("Policy", "Covar4", rowNum);
+			policy_Covar5 = reader.getCellData("Policy", "Covar5", rowNum);
+			policy_Covar6 = reader.getCellData("Policy", "Covar6", rowNum);
+			policy_Covar7 = reader.getCellData("Policy", "Covar7", rowNum);
+			policy_Covar8 = reader.getCellData("Policy", "Covar8", rowNum);
+			policy_Covar9 = reader.getCellData("Policy", "Covar9", rowNum);
+			policy_Covar10 = reader.getCellData("Policy", "Covar10", rowNum);
+			
+			
+			Object ob[] = {policy_Name, policy_Currency, policy_From, policy_To, policy_CovarsNumber, policy_Covar1, policy_Covar2, policy_Covar3, policy_Covar4, policy_Covar5, policy_Covar6, policy_Covar7, policy_Covar8, policy_Covar9, policy_Covar10};
+			data.add(ob);
+			
+		}
+		return data;
 	}
 	
 }

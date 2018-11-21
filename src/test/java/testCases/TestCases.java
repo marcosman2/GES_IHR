@@ -83,12 +83,12 @@ public class TestCases {
 	}
 	
 	//-------------------------Pasos que se ejecutan siempre al final-----------------------------------------------------------
-	/*@AfterMethod
+	@AfterMethod
 	public void tearDown()
 	{
 		Helpers helper = new Helpers (driver);
 		helper.waitingTime(3);
 		helper.screenshotcapture("Finished_");
 		driver.quit();
-	}*/
+	}
 }

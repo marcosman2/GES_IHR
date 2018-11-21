@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite verbose="0" name="Failed suite [testCases.TestCases]">
+<suite verbose="0" name="Failed suite [testCases.TestsDataDriven]">
   <test thread-count="5" verbose="0" name="Command line test(failed)">
     <classes>
-      <class name="testCases.TestCases">
+      <class name="testCases.TestsDataDriven">
         <methods>
           <include name="setUp"/>
-          <include name="newPolicy"/>
+          <include name="newPolicies" invocation-numbers="1"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- testCases.TestCases -->
+      </class> <!-- testCases.TestsDataDriven -->
     </classes>
   </test> <!-- Command line test(failed) -->
-</suite> <!-- Failed suite [testCases.TestCases] -->
+</suite> <!-- Failed suite [testCases.TestsDataDriven] -->
