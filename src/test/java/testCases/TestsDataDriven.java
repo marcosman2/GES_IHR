@@ -19,6 +19,7 @@ import dataDriven.DataDriven;
 import pageObjects.PageAssignee;
 import pageObjects.PageAssigneePolicy;
 import pageObjects.PageAssignment;
+import pageObjects.PageCompImportLegacy;
 import pageObjects.PageLogin;
 import pageObjects.PagePolicies;
 
@@ -29,7 +30,6 @@ public class TestsDataDriven {
 	@BeforeMethod
 	public void setUp()
 	{
-		DesiredCapabilities caps = new DesiredCapabilities();
 		System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.navigate().to("https://dgaexpatriateapp.deloitte.com/SingleSiteOne/GlobalAdvantageIHR/GAShare/Portal/Userlogin.aspx?ClientID=IHRDEV1GAE6");
@@ -63,22 +63,22 @@ public class TestsDataDriven {
 	
 	//-----------------Creación de Assignee Assignment--------------------------------
 	
-		@DataProvider
-		public Iterator<Object[]> getDataAssigneeAssignment()
-		{
-			ArrayList<Object[]> testData = DataDriven.dataReaderAssigneeAssignment();
-			return testData.iterator();
-		}
+	@DataProvider
+	public Iterator<Object[]> getDataAssigneeAssignment()
+	{
+		ArrayList<Object[]> testData = DataDriven.dataReaderAssigneeAssignment();
+		return testData.iterator();
+	}
 		
-		@Test(dataProvider="getDataAssigneeAssignment")
-		public void newAssigneeAssignment(String effectiveDate, String firstName, String surname, String social, String id, String dob, String homeCntry, String homeSt, String assignment, String type, String identifier, String estimatedBegin, String estimatedEnd, String actualBegin, String homeOrg, String payCycle, String workLoc, String taxSt)
-		{
-			PageAssignee pageAssignee = new PageAssignee(driver);
-			DataDriven.dataReaderAssigneeAssignmentPolicy();
-			pageAssignee.newAssignee(effectiveDate, firstName, surname, social, id, dob, homeCntry, homeSt);
-			PageAssignment pageAssignment = new PageAssignment(driver);
-			pageAssignment.newAssignment(assignment, type, identifier, estimatedBegin, estimatedEnd, actualBegin, homeOrg, payCycle, workLoc, taxSt);		
-		}
+	@Test(dataProvider="getDataAssigneeAssignment")
+	public void newAssigneeAssignment(String effectiveDate, String firstName, String surname, String social, String id, String dob, String homeCntry, String homeSt, String assignment, String type, String identifier, String estimatedBegin, String estimatedEnd, String actualBegin, String homeOrg, String payCycle, String workLoc, String taxSt)
+	{
+		PageAssignee pageAssignee = new PageAssignee(driver);
+		DataDriven.dataReaderAssigneeAssignmentPolicy();
+		pageAssignee.newAssignee(effectiveDate, firstName, surname, social, id, dob, homeCntry, homeSt);
+		PageAssignment pageAssignment = new PageAssignment(driver);
+		pageAssignment.newAssignment(assignment, type, identifier, estimatedBegin, estimatedEnd, actualBegin, homeOrg, payCycle, workLoc, taxSt);		
+	}
 	
 	
 	//-----------------Creación de Assignee Assignment y Asociación de Policy--------------------------------
@@ -119,13 +119,30 @@ public class TestsDataDriven {
 		pagePolicies.newPolicy(policy, currency, beginDate, endDate, covarNumber, covar1, covar2, covar3, covar4, covar5, covar6, covar7, covar8, covar9, covar10);
 	}
 	
+	//------------------------Comp Import Legacy------------------------------------
+	
+	@DataProvider
+	public Iterator<Object[]> getDataCompImportLegacy()
+	{
+		ArrayList<Object[]> testData = DataDriven.dataReaderCompImportLegacy();
+		return testData.iterator();
+	}
+	
+	@Test(dataProvider="getDataCompImportLegacy")
+	public void compImportLegacy(String scenario, String testFile)
+	{
+		PageCompImportLegacy pageLegacy = new PageCompImportLegacy(driver);
+		DataDriven.dataReaderCompImportLegacy();
+		pageLegacy.compImportLegacy(scenario, testFile);
+	}
+	
 	//------------------------Pasos que se ejecutan siempre al final------------------------------------
 	@AfterMethod
 	public void tearDown()
 	{
 		Helpers helper = new Helpers (driver);
 		helper.waitingTime(3);
-		//helper.screenshotcapture("Finished_");
+		helper.screenshotcapture("Finished_");
 		driver.quit();
 	}
 

@@ -1,25 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="3" total="4" passed="1">
+<testng-results skipped="0" failed="0" ignored="4" total="7" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="testCases.TestCases" duration-ms="81090" started-at="2018-11-21T16:08:50Z" finished-at="2018-11-21T16:10:11Z">
+  <suite name="testCases.TestsDataDriven" duration-ms="60849" started-at="2018-11-22T21:25:26Z" finished-at="2018-11-22T21:26:26Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="81090" started-at="2018-11-21T16:08:50Z" finished-at="2018-11-21T16:10:11Z">
-      <class name="testCases.TestCases">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:testCases.TestCases@1e67b872]" name="setUp" is-config="true" duration-ms="34441" started-at="2018-11-21T16:08:50Z" finished-at="2018-11-21T16:09:24Z">
+    <test name="Command line test" duration-ms="60849" started-at="2018-11-22T21:25:26Z" finished-at="2018-11-22T21:26:26Z">
+      <class name="testCases.TestsDataDriven">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:testCases.TestsDataDriven@3f2a3a5]" name="setUp" is-config="true" duration-ms="19111" started-at="2018-11-22T21:25:27Z" finished-at="2018-11-22T21:25:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="newPolicy()[pri:0, instance:testCases.TestCases@1e67b872]" name="newPolicy" duration-ms="42400" started-at="2018-11-21T16:09:24Z" finished-at="2018-11-21T16:10:07Z">
+        <test-method status="PASS" signature="compImportLegacy(java.lang.String, java.lang.String)[pri:0, instance:testCases.TestsDataDriven@3f2a3a5]" name="compImportLegacy" duration-ms="6209" started-at="2018-11-22T21:25:46Z" data-provider="getDataCompImportLegacy" finished-at="2018-11-22T21:25:52Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[OK]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[C:/Users/mamanrique/Desktop/Test.xlsx]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- newPolicy -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:testCases.TestCases@1e67b872]" name="tearDown" is-config="true" duration-ms="4221" started-at="2018-11-21T16:10:07Z" finished-at="2018-11-21T16:10:11Z">
+        </test-method> <!-- compImportLegacy -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testCases.TestsDataDriven@3f2a3a5]" name="tearDown" is-config="true" duration-ms="4018" started-at="2018-11-22T21:25:52Z" finished-at="2018-11-22T21:25:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- testCases.TestCases -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:testCases.TestsDataDriven@3f2a3a5]" name="setUp" is-config="true" duration-ms="10294" started-at="2018-11-22T21:25:56Z" finished-at="2018-11-22T21:26:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="compImportLegacy(java.lang.String, java.lang.String)[pri:0, instance:testCases.TestsDataDriven@3f2a3a5]" name="compImportLegacy" duration-ms="3938" started-at="2018-11-22T21:26:06Z" data-provider="getDataCompImportLegacy" finished-at="2018-11-22T21:26:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Fail 1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[C:/Users/mamanrique/Desktop/Test2.xlsx]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- compImportLegacy -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testCases.TestsDataDriven@3f2a3a5]" name="tearDown" is-config="true" duration-ms="4043" started-at="2018-11-22T21:26:10Z" finished-at="2018-11-22T21:26:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:testCases.TestsDataDriven@3f2a3a5]" name="setUp" is-config="true" duration-ms="5441" started-at="2018-11-22T21:26:14Z" finished-at="2018-11-22T21:26:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="compImportLegacy(java.lang.String, java.lang.String)[pri:0, instance:testCases.TestsDataDriven@3f2a3a5]" name="compImportLegacy" duration-ms="2798" started-at="2018-11-22T21:26:20Z" data-provider="getDataCompImportLegacy" finished-at="2018-11-22T21:26:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Fail 2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[C:/Users/mamanrique/Desktop/Test3.xlsx]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- compImportLegacy -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testCases.TestsDataDriven@3f2a3a5]" name="tearDown" is-config="true" duration-ms="4056" started-at="2018-11-22T21:26:22Z" finished-at="2018-11-22T21:26:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- testCases.TestsDataDriven -->
     </test> <!-- Command line test -->
-  </suite> <!-- testCases.TestCases -->
+  </suite> <!-- testCases.TestsDataDriven -->
 </testng-results>

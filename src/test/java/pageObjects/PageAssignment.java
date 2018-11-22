@@ -59,7 +59,6 @@ public class PageAssignment {
 		Helpers helper = new Helpers(driver);
 		helper.waitingTime(2);
 		assignmentWait.sendKeys(Keys.TAB);
-		//new Actions (driver).moveToElement((WebElement) assignmentTypeDrop).perform();
 		helper.waitingTime(2);
 		driver.findElement(assignmentTypeDrop).sendKeys(assignmentType);
 		helper.waitingTime(1);

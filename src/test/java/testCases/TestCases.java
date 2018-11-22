@@ -14,6 +14,7 @@ import helpers.Helpers;
 import pageObjects.PageAssignee;
 import pageObjects.PageAssigneePolicy;
 import pageObjects.PageAssignment;
+import pageObjects.PageCompImportLegacy;
 import pageObjects.PageLogin;
 import pageObjects.PagePolicies;
 
@@ -26,7 +27,6 @@ public class TestCases {
 	@BeforeMethod
 	public void setUp()
 	{
-		DesiredCapabilities caps = new DesiredCapabilities();
 		System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.navigate().to("https://app2.iastax.com/SingleSiteOne/GlobalAdvantageIHR/GAShare/Portal/Userlogin.aspx?ClientId=GLTSTUSER23");
@@ -56,9 +56,9 @@ public class TestCases {
 	public void newAssigneeAssignment()
 	{
 			PageAssignee pageAssignee = new PageAssignee(driver);
-			pageAssignee.newAssignee("1/1/2018", "Alejandra", "Paz", "577845453011", "1152191801021", "10/22/2000", "Argentina", "Buenos Aires");
+			pageAssignee.newAssignee("1/1/2018", "Sandra", "Preston", "577845853011", "1152791801021", "10/22/2000", "Argentina", "Buenos Aires");
 			PageAssignment pageAssignment = new PageAssignment(driver);
-			pageAssignment.newAssignment("Australia", "Business Trip", "924731", "1/1/2018", "12/31/2018", "1/1/2018", "Org ONe|XYZ|", "Monthly", "AUSTRALIA", "Australia Capital Territory");
+			pageAssignment.newAssignment("Australia", "Business Trip", "2924731", "1/1/2018", "12/31/2018", "1/1/2018", "Org ONe|XYZ|", "Monthly", "AUSTRALIA", "Australia Capital Territory");
 	}
 	
 	//------------------------------Creación de Assignee Assignment Policy--------------------------------------------------------
@@ -66,9 +66,9 @@ public class TestCases {
 	public void newAssigneeAssignmentPolicy()
 	{
 		PageAssignee pageAssignee = new PageAssignee(driver);
-		pageAssignee.newAssignee("1/1/2018", "Alejandra", "Paz", "577845453011", "1152191801021", "10/22/2000", "Argentina", "Buenos Aires");
+		pageAssignee.newAssignee("1/1/2018", "Alejandro", "Ruiz", "5778454984", "115219180107581", "10/22/2000", "Argentina", "Buenos Aires");
 		PageAssignment pageAssignment = new PageAssignment(driver);
-		pageAssignment.newAssignment("Australia", "Business Trip", "924731", "1/1/2018", "12/31/2018", "1/1/2018", "XYZ|", "Monthly", "AUSTRALIA", "Australia Capital Territory");
+		pageAssignment.newAssignment("Australia", "Business Trip", "1924731", "1/1/2018", "12/31/2018", "1/1/2018", "XYZ|", "Monthly", "AUSTRALIA", "Australia Capital Territory");
 		PageAssigneePolicy pageAssigneePolicy = new PageAssigneePolicy(driver);
 		pageAssigneePolicy.newAssigneeAssignmentPolicy("Big Policy", "1/1/2018", "12/31/2018");
 	}
@@ -79,7 +79,15 @@ public class TestCases {
 	public void newPolicy()
 	{
 		PagePolicies pagePolicies = new PagePolicies(driver);
-		pagePolicies.newPolicy("Automated Policy23", "United States Dollar", "1/1/2018", "12/31/2018", "10", "Net Pay", "zzzAlimony Received", "zzzAnnual Paid Premium", "zzzAnnuities", "zzzAuto Loan Advance", "zzzAutomobile Expense", "zzzBase Salary", "zzzBonus - Current Year", "zzzEducation Trip", "zzzEntertainment Allowance");
+		pagePolicies.newPolicy("Automated Policy38", "United States Dollar", "1/1/2018", "12/31/2018", "10", "Net Pay", "zzzAlimony Received", "zzzAnnual Paid Premium", "zzzAnnuities", "zzzAuto Loan Advance", "zzzAutomobile Expense", "zzzBase Salary", "zzzBonus - Current Year", "zzzEducation Trip", "zzzEntertainment Allowance");
+	}
+	
+	//------------------------------Comp Import Legacy--------------------------------------------------------
+	@Test
+	public void importLegacy()
+	{
+		PageCompImportLegacy pageLegacy = new PageCompImportLegacy(driver);
+		pageLegacy.compImportLegacy("Successfully", "C:/Users/mamanrique/Desktop/Test.xlsx");
 	}
 	
 	//-------------------------Pasos que se ejecutan siempre al final-----------------------------------------------------------

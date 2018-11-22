@@ -43,6 +43,8 @@ public class DataDriven {
 	public static String policy_Covar8;
 	public static String policy_Covar9;
 	public static String policy_Covar10;
+	public static String compImportLegacyScenario;
+	public static String compImportLegacyFile;
 	
 	//-----------------------------MÉTODOS PARA LEER LOS DATOS DE EXCEL---------------------------------------------------------
 	
@@ -170,6 +172,33 @@ public class DataDriven {
 	
 	//---------------------------Método para leer los datos de un Policy----------------------------------------
 	
+	public static ArrayList<Object[]> dataReaderCompImportLegacy()
+	{
+		ArrayList<Object[]> data = new ArrayList<Object[]>();
+		try
+		{
+		reader = new Xls_Reader("C:\\Users\\mamanrique\\eclipse-workspace\\IHR\\src\\test\\java\\helpers\\IHR_Data.xlsx");
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		int rowCount = reader.getRowCount("CompImportLegacy");
+		for (int rowNum = 2; rowNum<= rowCount; rowNum++)
+		{
+			
+			compImportLegacyScenario = reader.getCellData("CompImportLegacy", "Scenario", rowNum);
+			compImportLegacyFile = reader.getCellData("CompImportLegacy", "Test_File", rowNum);
+			
+			Object ob[] = {compImportLegacyScenario, compImportLegacyFile};
+			data.add(ob);
+			
+		}
+		return data;
+	}
+	
+	//---------------------------Método para leer los datos del Comp Import Legacy----------------------------------------
+	
 	public static ArrayList<Object[]> dataReaderPolicy()
 	{
 		ArrayList<Object[]> data = new ArrayList<Object[]>();
@@ -201,12 +230,10 @@ public class DataDriven {
 			policy_Covar9 = reader.getCellData("Policy", "Covar9", rowNum);
 			policy_Covar10 = reader.getCellData("Policy", "Covar10", rowNum);
 			
-			
 			Object ob[] = {policy_Name, policy_Currency, policy_From, policy_To, policy_CovarsNumber, policy_Covar1, policy_Covar2, policy_Covar3, policy_Covar4, policy_Covar5, policy_Covar6, policy_Covar7, policy_Covar8, policy_Covar9, policy_Covar10};
 			data.add(ob);
 			
 		}
 		return data;
 	}
-	
 }

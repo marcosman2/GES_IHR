@@ -78,7 +78,7 @@ public class PageAssignee {
 			}
 			else
 			{
-				helper.screenshotcapture("ISSUE_Assinee Not Created_");
+				helper.screenshotcapture("ISSUE_Assignee Not Created_");
 			}
 		
 	}
