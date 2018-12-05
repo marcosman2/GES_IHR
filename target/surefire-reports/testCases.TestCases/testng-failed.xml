@@ -5,8 +5,9 @@
     <classes>
       <class name="testCases.TestCases">
         <methods>
-          <include name="importLegacy"/>
+          <include name="tearDown"/>
           <include name="setUp"/>
+          <include name="newCompImport"/>
         </methods>
       </class> <!-- testCases.TestCases -->
     </classes>

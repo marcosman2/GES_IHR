@@ -16,6 +16,7 @@ import pageObjects.PageAssigneePolicy;
 import pageObjects.PageAssignment;
 import pageObjects.PageCompImportLegacy;
 import pageObjects.PageLogin;
+import pageObjects.PageNewCompImport;
 import pageObjects.PagePolicies;
 
 
@@ -90,13 +91,21 @@ public class TestCases {
 		pageLegacy.compImportLegacy("Successfully", "C:/Users/mamanrique/Desktop/Test.xlsx");
 	}
 	
+	//------------------------------New Comp Import--------------------------------------------------------
+	@Test
+	public void newCompImport()
+	{
+		PageNewCompImport pageNewCompImport = new PageNewCompImport(driver);
+		pageNewCompImport.newCompImport("Successfully", "C:/Users/mamanrique/Desktop/NewCompImportAutomated_Grouping.xlsx");
+	}
+	
 	//-------------------------Pasos que se ejecutan siempre al final-----------------------------------------------------------
-	@AfterMethod
+	/*@AfterMethod
 	public void tearDown()
 	{
 		Helpers helper = new Helpers (driver);
-		helper.waitingTime(3);
+		helper.waitingTime(2);
 		helper.screenshotcapture("Finished_");
 		driver.quit();
-	}
+	}*/
 }
