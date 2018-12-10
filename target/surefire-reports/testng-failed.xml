@@ -5,9 +5,8 @@
     <classes>
       <class name="testCases.TestCases">
         <methods>
-          <include name="tearDown"/>
           <include name="setUp"/>
-          <include name="newCompImport"/>
+          <include name="newpayPolicyTemplate"/>
         </methods>
       </class> <!-- testCases.TestCases -->
     </classes>

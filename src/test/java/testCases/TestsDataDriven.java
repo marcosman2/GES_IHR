@@ -21,6 +21,7 @@ import pageObjects.PageAssigneePolicy;
 import pageObjects.PageAssignment;
 import pageObjects.PageCompImportLegacy;
 import pageObjects.PageLogin;
+import pageObjects.PageNewCompImport;
 import pageObjects.PagePolicies;
 
 public class TestsDataDriven {
@@ -32,11 +33,11 @@ public class TestsDataDriven {
 	{
 		System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver.exe");
 		driver = new ChromeDriver();
-		driver.navigate().to("https://dgaexpatriateapp.deloitte.com/SingleSiteOne/GlobalAdvantageIHR/GAShare/Portal/Userlogin.aspx?ClientID=IHRDEV1GAE6");
+		driver.navigate().to("https://app2.iastax.com/SingleSiteOne/GlobalAdvantageIHR/GAShare/Portal/Userlogin.aspx?ClientId=GLTSTUSER23");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		PageLogin pageLogin = new PageLogin(driver);
-		pageLogin.login("psup", "A7h*%2UF");
+		pageLogin.login("psup", "B8j$#8ft");
 		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 		driver.findElement(By.xpath("//*[@id=\"MasterMenu\"]/ul/li[1]/a")).click();
 		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
@@ -136,13 +137,30 @@ public class TestsDataDriven {
 		pageLegacy.compImportLegacy(scenario, testFile);
 	}
 	
+	//------------------------New Comp Import------------------------------------
+	
+		@DataProvider
+		public Iterator<Object[]> getDataNewCompImport()
+		{
+			ArrayList<Object[]> testData = DataDriven.dataReaderNewCompImport();
+			return testData.iterator();
+		}
+		
+		@Test(dataProvider="getDataNewCompImport")
+		public void newCompImport(String scenario, String testFile)
+		{
+			PageNewCompImport pageLegacy = new PageNewCompImport(driver);
+			DataDriven.dataReaderNewCompImport();
+			pageLegacy.newCompImport(scenario, testFile);
+		}
+	
 	//------------------------Pasos que se ejecutan siempre al final------------------------------------
 	@AfterMethod
 	public void tearDown()
 	{
 		Helpers helper = new Helpers (driver);
-		helper.waitingTime(3);
-		helper.screenshotcapture("Finished_");
+		helper.waitingTime(2);
+		//helper.screenshotcapture("Finished_");
 		driver.quit();
 	}
 

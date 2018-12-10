@@ -17,6 +17,7 @@ import pageObjects.PageAssignment;
 import pageObjects.PageCompImportLegacy;
 import pageObjects.PageLogin;
 import pageObjects.PageNewCompImport;
+import pageObjects.PagePayPolicy;
 import pageObjects.PagePolicies;
 
 
@@ -80,7 +81,7 @@ public class TestCases {
 	public void newPolicy()
 	{
 		PagePolicies pagePolicies = new PagePolicies(driver);
-		pagePolicies.newPolicy("Automated Policy38", "United States Dollar", "1/1/2018", "12/31/2018", "10", "Net Pay", "zzzAlimony Received", "zzzAnnual Paid Premium", "zzzAnnuities", "zzzAuto Loan Advance", "zzzAutomobile Expense", "zzzBase Salary", "zzzBonus - Current Year", "zzzEducation Trip", "zzzEntertainment Allowance");
+		pagePolicies.newPolicy("U.S. Inbound", "United States Dollar", "1/1/2018", "12/31/2018", "10", "Net Pay", "zzzAlimony Received", "zzzAnnual Paid Premium", "zzzAnnuities", "zzzAuto Loan Advance", "zzzAutomobile Expense", "zzzBase Salary", "zzzBonus - Current Year", "zzzEducation Trip", "zzzEntertainment Allowance");
 	}
 	
 	//------------------------------Comp Import Legacy--------------------------------------------------------
@@ -99,13 +100,21 @@ public class TestCases {
 		pageNewCompImport.newCompImport("Successfully", "C:/Users/mamanrique/Desktop/NewCompImportAutomated_Grouping.xlsx");
 	}
 	
+	//------------------------------New Comp Import--------------------------------------------------------
+	@Test
+	public void newpayPolicyTemplate()
+	{
+		PagePayPolicy pagePP = new PagePayPolicy(driver);
+		pagePP.newPayPolicyTemplate("Automate82", "1/1/2018", "United States", "FPE PLS", "Home", "Both", "HOME", "New From Issue", "NETPY", "EXTPY", "AUTLS", "DEPTR", "BONCY", "Fixed Amount", 5000, "Semi-Monthly", 2500.5, "Weekly", 1000, "Annually", 700, "Bi-Monthly", 1200, "Quarterly", "DEPTR", "AUTLS", "BONUS", "RTMTN", "HHRCO", "United States Dollar", "HOME", "AUTLS - zzzAutomobile Leasing", "AUTLS - Automobile Leasing", "Both", "BONCY - zzzBonus - Current Year", "BONUS - Bonus - Current Year", "Both", "DEPTR - zzzEducation Trip", "DEPTR - Education Trip", "Both", "EXTPY - External System", "HHRCO - Host Housing - Rented by Company", "Both", "NETPY - Net Pay", "RTMTN - Rental Maintenance", "Both");
+	}	
+	
 	//-------------------------Pasos que se ejecutan siempre al final-----------------------------------------------------------
 	/*@AfterMethod
 	public void tearDown()
 	{
 		Helpers helper = new Helpers (driver);
 		helper.waitingTime(2);
-		helper.screenshotcapture("Finished_");
+		//helper.screenshotcapture("Finished_");
 		driver.quit();
 	}*/
 }

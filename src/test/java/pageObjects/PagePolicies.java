@@ -128,6 +128,7 @@ public class PagePolicies {
 		driver.findElement(endDateCalendar).sendKeys(endDate);
 		driver.findElement(endDateCalendar).sendKeys(Keys.TAB);
 		driver.findElement(activeCheck).click();
+		helper.screenshotcapture("Policy Information_");
 		driver.findElement(covarNumberDrop).clear();
 		driver.findElement(covarNumberDrop).sendKeys(covarNumber);
 		helper.waitingTime(2);

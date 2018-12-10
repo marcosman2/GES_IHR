@@ -45,6 +45,9 @@ public class DataDriven {
 	public static String policy_Covar10;
 	public static String compImportLegacyScenario;
 	public static String compImportLegacyFile;
+	public static String newCompImportScenario;
+	public static String newCompImportFile;
+	
 	
 	//-----------------------------MÉTODOS PARA LEER LOS DATOS DE EXCEL---------------------------------------------------------
 	
@@ -170,7 +173,7 @@ public class DataDriven {
 		return data;		
 	}
 	
-	//---------------------------Método para leer los datos de un Policy----------------------------------------
+	//---------------------------Método para leer los datos del Comp Import Legacy----------------------------------------
 	
 	public static ArrayList<Object[]> dataReaderCompImportLegacy()
 	{
@@ -197,7 +200,7 @@ public class DataDriven {
 		return data;
 	}
 	
-	//---------------------------Método para leer los datos del Comp Import Legacy----------------------------------------
+	//---------------------------Método para leer los datos de un Policy----------------------------------------
 	
 	public static ArrayList<Object[]> dataReaderPolicy()
 	{
@@ -231,6 +234,33 @@ public class DataDriven {
 			policy_Covar10 = reader.getCellData("Policy", "Covar10", rowNum);
 			
 			Object ob[] = {policy_Name, policy_Currency, policy_From, policy_To, policy_CovarsNumber, policy_Covar1, policy_Covar2, policy_Covar3, policy_Covar4, policy_Covar5, policy_Covar6, policy_Covar7, policy_Covar8, policy_Covar9, policy_Covar10};
+			data.add(ob);
+			
+		}
+		return data;
+	}
+	
+	//---------------------------Método para leer los datos del New Comp Import----------------------------------------
+	
+	public static ArrayList<Object[]> dataReaderNewCompImport()
+	{
+		ArrayList<Object[]> data = new ArrayList<Object[]>();
+		try
+		{
+		reader = new Xls_Reader("C:\\Users\\mamanrique\\eclipse-workspace\\IHR\\src\\test\\java\\helpers\\IHR_Data.xlsx");
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		int rowCount = reader.getRowCount("NewCompImport");
+		for (int rowNum = 2; rowNum<= rowCount; rowNum++)
+		{
+			
+			newCompImportScenario = reader.getCellData("NewCompImport", "Scenario", rowNum);
+			newCompImportFile = reader.getCellData("NewCompImport", "Test_File", rowNum);
+			
+			Object ob[] = {newCompImportScenario, newCompImportFile};
 			data.add(ob);
 			
 		}

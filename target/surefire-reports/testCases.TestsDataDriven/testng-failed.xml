@@ -6,7 +6,7 @@
       <class name="testCases.TestsDataDriven">
         <methods>
           <include name="setUp"/>
-          <include name="compImportLegacy"/>
+          <include name="newCompImport"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- testCases.TestsDataDriven -->

@@ -112,8 +112,6 @@ public class PageNewCompImport {
 			helper.screenshotcapture("Processed_" + scenario + "_");
 		}
 				
-	}
-	
-	
+	}	
 
 }
