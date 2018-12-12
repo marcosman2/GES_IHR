@@ -38,7 +38,8 @@ public class PageCompImportLegacy {
 		Helpers helper = new Helpers(driver);
 		helper.screenshotcapture(scenario + "_");
 		driver.findElement(importButton).click();
-		driver.findElement(messageDisplayedLabel).isDisplayed();		
+		driver.findElement(messageDisplayedLabel).isDisplayed();
+		helper.screenshotcapture("Import Completed_");
 		
 	}
 

@@ -14,6 +14,7 @@ import helpers.Helpers;
 import pageObjects.PageAssignee;
 import pageObjects.PageAssigneePolicy;
 import pageObjects.PageAssignment;
+import pageObjects.PageBulkStatusUpdate;
 import pageObjects.PageCompImportLegacy;
 import pageObjects.PageLogin;
 import pageObjects.PageNewCompImport;
@@ -102,11 +103,31 @@ public class TestCases {
 	
 	//------------------------------New Comp Import--------------------------------------------------------
 	@Test
-	public void newpayPolicyTemplate()
+	public void newPayPolicyTemplate()
 	{
 		PagePayPolicy pagePP = new PagePayPolicy(driver);
-		pagePP.newPayPolicyTemplate("Automate82", "1/1/2018", "United States", "FPE PLS", "Home", "Both", "HOME", "New From Issue", "NETPY", "EXTPY", "AUTLS", "DEPTR", "BONCY", "Fixed Amount", 5000, "Semi-Monthly", 2500.5, "Weekly", 1000, "Annually", 700, "Bi-Monthly", 1200, "Quarterly", "DEPTR", "AUTLS", "BONUS", "RTMTN", "HHRCO", "United States Dollar", "HOME", "AUTLS - zzzAutomobile Leasing", "AUTLS - Automobile Leasing", "Both", "BONCY - zzzBonus - Current Year", "BONUS - Bonus - Current Year", "Both", "DEPTR - zzzEducation Trip", "DEPTR - Education Trip", "Both", "EXTPY - External System", "HHRCO - Host Housing - Rented by Company", "Both", "NETPY - Net Pay", "RTMTN - Rental Maintenance", "Both");
+		pagePP.newPayPolicyTemplate("Automate91", "5/18/2018", "United States", "FPE PLS", "Home", "Both", "HOME", "New From Issue", "NETPY", "EXTPY", "AUTLS", "DEPTR", "BONCY", "Fixed Amount", 5000, "Semi-Monthly", 2500.5, "Weekly", 1000, "Annually", 700, "Bi-Monthly", 1200, "Quarterly", "DEPTR", "AUTLS", "BONUS", "RTMTN", "HHRCO", "United States Dollar", "HOME", "AUTLS - zzzAutomobile Leasing", "AUTLS - Automobile Leasing", "Both", "BONCY - zzzBonus - Current Year", "BONUS - Bonus - Current Year", "Both", "DEPTR - zzzEducation Trip", "DEPTR - Education Trip", "Both", "EXTPY - External System", "HHRCO - Host Housing - Rented by Company", "Both", "NETPY - Net Pay", "RTMTN - Rental Maintenance", "Both");
 	}	
+	
+	
+	//-----------------------------Bulk Status Update----------------------------------------------
+	@Test
+	public void pageOneBSU()
+	{
+		PageBulkStatusUpdate pageBSU = new PageBulkStatusUpdate(driver);
+		pageBSU.searchRecordsBSU("Juan", "", "2010 - 2030", "1/1/2018", "12/31/2018", "Reviewed");
+		pageBSU.firstPageBSU();
+	}
+	
+	@Test
+	public void pageTwoBSU()
+	{
+		PageBulkStatusUpdate pageBSU = new PageBulkStatusUpdate(driver);
+		pageBSU.searchRecordsBSU("Juan", "Diaz", "2010 - 2030", "1/1/2018", "12/31/2018", "Reviewed");
+		pageBSU.secondPageBSU();
+	}
+	
+	
 	
 	//-------------------------Pasos que se ejecutan siempre al final-----------------------------------------------------------
 	/*@AfterMethod

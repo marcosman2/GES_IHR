@@ -211,6 +211,9 @@ public class PagePayPolicy {
 		WebDriverWait wait = new WebDriverWait(driver, 60);
 		WebElement policyLink = wait.until(ExpectedConditions.presenceOfElementLocated(policyAdministrationLink));
 		policyLink.click();
+		
+		//-----------------------------------PPT Initial Information--------------------------------------------------------------
+		
 		WebElement payPolicyLink = wait.until(ExpectedConditions.presenceOfElementLocated(payPolicyTemplateLink));
 		payPolicyLink.click();
 		WebElement newPPTButton = wait.until(ExpectedConditions.elementToBeClickable(newTemplateButton));
@@ -244,7 +247,7 @@ public class PagePayPolicy {
 		helper.screenshotcapture("PPT Created_");
 		driver.findElement(configurationLink).click();
 		
-		//----------------Adding Variables----------------------------------------
+		//--------------------------------------Adding Variables-------------------------------------------------------------
 		WebElement remunAccordion = wait.until(ExpectedConditions.presenceOfElementLocated(remunerationVariablesAccordion));
 		remunAccordion.click();
 		WebElement addVariables = wait.until(ExpectedConditions.elementToBeClickable(addVariablesButton));
@@ -272,6 +275,7 @@ public class PagePayPolicy {
 		driver.findElement(okVariableButton).click();
 		driver.switchTo().defaultContent();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		
 		driver.findElement(source1Link).click();
 		WebElement amountFrame = driver.findElement(By.xpath("//*[@id=\"jPopUpFrame\"]"));
 		driver.switchTo().frame(amountFrame);
@@ -291,6 +295,7 @@ public class PagePayPolicy {
 		driver.switchTo().defaultContent();
 		driver.findElement(closeAmountIcon).click();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		
 		driver.findElement(source2Link).click();
 		WebElement amountFrame2 = driver.findElement(By.xpath("//*[@id=\"jPopUpFrame\"]"));
 		driver.switchTo().frame(amountFrame2);
@@ -309,6 +314,7 @@ public class PagePayPolicy {
 		driver.switchTo().defaultContent();
 		driver.findElement(closeAmountIcon).click();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		
 		driver.findElement(source3Link).click();
 		WebElement amountFrame3 = driver.findElement(By.xpath("//*[@id=\"jPopUpFrame\"]"));
 		driver.switchTo().frame(amountFrame3);
@@ -327,6 +333,7 @@ public class PagePayPolicy {
 		driver.switchTo().defaultContent();
 		driver.findElement(closeAmountIcon).click();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		
 		driver.findElement(source4Link).click();
 		WebElement amountFrame4 = driver.findElement(By.xpath("//*[@id=\"jPopUpFrame\"]"));
 		driver.switchTo().frame(amountFrame4);
@@ -345,6 +352,7 @@ public class PagePayPolicy {
 		driver.switchTo().defaultContent();
 		driver.findElement(closeAmountIcon).click();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		
 		driver.findElement(source5Link).click();
 		WebElement amountFrame5 = driver.findElement(By.xpath("//*[@id=\"jPopUpFrame\"]"));
 		driver.switchTo().frame(amountFrame5);
@@ -363,7 +371,7 @@ public class PagePayPolicy {
 		driver.switchTo().defaultContent();
 		driver.findElement(closeAmountIcon).click();		
 				
-		//---------------------------Adding Elements-----------------------------------------------
+		//---------------------------------------------Adding Elements-----------------------------------------------
 		helper.waitingTime(1);
 		driver.findElement(costProjectionAccordion).click();
 		WebElement addCPButton = wait.until(ExpectedConditions.elementToBeClickable(addElementButton));
@@ -396,6 +404,7 @@ public class PagePayPolicy {
 		driver.findElement(selectElementButton).click();
 		driver.switchTo().defaultContent();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		
 		driver.findElement(elementCurrencyDrop1).sendKeys(currency);
 		helper.waitingTime(1);
 		driver.findElement(elementCurrencyDrop1).sendKeys(Keys.TAB);
@@ -403,24 +412,28 @@ public class PagePayPolicy {
 		helper.waitingTime(1);
 		driver.findElement(elementCurrencyIndDrop1).sendKeys(Keys.TAB);
 		((JavascriptExecutor)driver).executeScript("scroll(0,150)");
+		
 		driver.findElement(elementCurrencyDrop2).sendKeys(currency);
 		helper.waitingTime(1);
 		driver.findElement(elementCurrencyDrop2).sendKeys(Keys.TAB);
 		driver.findElement(elementCurrencyIndDrop2).sendKeys(curIndicator);
 		helper.waitingTime(1);
 		driver.findElement(elementCurrencyIndDrop2).sendKeys(Keys.TAB);
+		
 		driver.findElement(elementCurrencyDrop3).sendKeys(currency);
 		helper.waitingTime(1);
 		driver.findElement(elementCurrencyDrop3).sendKeys(Keys.TAB);
 		driver.findElement(elementCurrencyIndDrop3).sendKeys(curIndicator);
 		helper.waitingTime(1);
 		driver.findElement(elementCurrencyIndDrop3).sendKeys(Keys.TAB);
+		
 		driver.findElement(elementCurrencyDrop4).sendKeys(currency);
 		helper.waitingTime(1);
 		driver.findElement(elementCurrencyDrop4).sendKeys(Keys.TAB);
 		driver.findElement(elementCurrencyIndDrop4).sendKeys(curIndicator);
 		helper.waitingTime(1);
 		driver.findElement(elementCurrencyIndDrop4).sendKeys(Keys.TAB);
+		
 		driver.findElement(elementCurrencyDrop5).sendKeys(currency);
 		helper.waitingTime(1);
 		driver.findElement(elementCurrencyDrop5).sendKeys(Keys.TAB);
@@ -429,7 +442,7 @@ public class PagePayPolicy {
 		driver.findElement(elementCurrencyIndDrop5).sendKeys(Keys.TAB);
 		driver.findElement(saveElementButton).click();
 		
-		//---------------------Adding Compensation Mappings---------------------------------------------
+		//---------------------Adding Compensation Mappings----------------------------------------------------------------
 		
 		WebElement addMapp = wait.until(ExpectedConditions.elementToBeClickable(addCompensationMappingButton));
 		helper.waitingTime(2);
@@ -506,7 +519,7 @@ public class PagePayPolicy {
 		driver.findElement(lookupCheckBox5).click();
 				
 		driver.findElement(saveCompensationMappingButton).click();
-		//-----------------------------------
+		//---------------------------------------------------------------------------------------------------------------------
 		WebElement savedMappings = wait.until(ExpectedConditions.visibilityOfElementLocated(savedCompensationMappingMessage));
 		helper.screenshotcapture("Mappings Added_");		
 		

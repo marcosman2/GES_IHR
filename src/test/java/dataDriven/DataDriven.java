@@ -48,6 +48,55 @@ public class DataDriven {
 	public static String newCompImportScenario;
 	public static String newCompImportFile;
 	
+	//PPT Variables
+	
+	public static String payPolicy_Name;
+	public static String payPolicy_BD;
+	public static String payPolicy_PL;
+	public static String payPolicy_PLS;
+	public static String payPolicy_Charge;
+	public static String payPolicy_Social;
+	public static String payPolicy_Hypo;
+	public static String payPolicy_TET;
+	public static String payPolicy_Variable1;
+	public static String payPolicy_Variable2;
+	public static String payPolicy_Variable3;
+	public static String payPolicy_Variable4;
+	public static String payPolicy_Variable5;
+	public static String payPolicy_SourceType;
+	public static Double payPolicy_Amount1;
+	public static String payPolicy_HowStated1;
+	public static Double payPolicy_Amount2;
+	public static String payPolicy_HowStated2;
+	public static Double payPolicy_Amount3;
+	public static String payPolicy_HowStated3;
+	public static Double payPolicy_Amount4;
+	public static String payPolicy_HowStated4;
+	public static Double payPolicy_Amount5;
+	public static String payPolicy_HowStated5;
+	public static String payPolicy_Element1;
+	public static String payPolicy_Element2;
+	public static String payPolicy_Element3;
+	public static String payPolicy_Element4;
+	public static String payPolicy_Element5;
+	public static String payPolicy_Currency;
+	public static String payPolicy_CurrencyIndicator;
+	public static String payPolicy_VariableMapping1;
+	public static String payPolicy_ElementMapping1;
+	public static String payPolicy_UsageMapping1;
+	public static String payPolicy_VariableMapping2;
+	public static String payPolicy_ElementMapping2;
+	public static String payPolicy_UsageMapping2;
+	public static String payPolicy_VariableMapping3;
+	public static String payPolicy_ElementMapping3;
+	public static String payPolicy_UsageMapping3;
+	public static String payPolicy_VariableMapping4;
+	public static String payPolicy_ElementMapping4;
+	public static String payPolicy_UsageMapping4;
+	public static String payPolicy_VariableMapping5;
+	public static String payPolicy_ElementMapping5;
+	public static String payPolicy_UsageMapping5;
+	
 	
 	//-----------------------------MÉTODOS PARA LEER LOS DATOS DE EXCEL---------------------------------------------------------
 	
@@ -265,5 +314,85 @@ public class DataDriven {
 			
 		}
 		return data;
+	}
+	
+	//--------------------------------Método para leer los datos del PPT-------------------------------------------------
+	
+	public static ArrayList<Object[]> dataReaderPayPolicyTemplate()
+	{
+		ArrayList<Object[]> data = new ArrayList<Object[]>();
+		try
+		{
+		reader = new Xls_Reader("C:\\Users\\mamanrique\\eclipse-workspace\\IHR\\src\\test\\java\\helpers\\IHR_Data.xlsx");
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		int rowCount = reader.getRowCount("PPT");
+		for (int rowNum = 2; rowNum<= rowCount; rowNum++)
+		{
+			
+			payPolicy_Name = reader.getCellData("PPT", "PPT_Name", rowNum);
+			payPolicy_BD = reader.getCellData("PPT", "Begin_Date", rowNum);
+			payPolicy_PL = reader.getCellData("PPT", "PL", rowNum);
+			payPolicy_PLS = reader.getCellData("PPT", "PLS", rowNum);
+			payPolicy_Charge = reader.getCellData("PPT", "Charge", rowNum);
+			payPolicy_Social = reader.getCellData("PPT", "Social_Tax", rowNum);
+			payPolicy_Hypo = reader.getCellData("PPT", "Hypo", rowNum);
+			payPolicy_TET = reader.getCellData("PPT", "TET", rowNum);
+			payPolicy_Variable1 = reader.getCellData("PPT", "Variable1", rowNum);
+			payPolicy_Variable2 = reader.getCellData("PPT", "Variable2", rowNum);
+			payPolicy_Variable3 = reader.getCellData("PPT", "Variable3", rowNum);
+			payPolicy_Variable4 = reader.getCellData("PPT", "Variable4", rowNum);
+			payPolicy_Variable5 = reader.getCellData("PPT", "Variable5", rowNum);
+			payPolicy_SourceType = reader.getCellData("PPT", "Source_Type", rowNum);
+			payPolicy_Amount1 = Double.parseDouble(reader.getCellData("PPT", "Amount1", rowNum));
+			payPolicy_HowStated1 = reader.getCellData("PPT", "How_Stated1", rowNum);
+			payPolicy_Amount2 = Double.parseDouble(reader.getCellData("PPT", "Amount2", rowNum));
+			payPolicy_HowStated2 = reader.getCellData("PPT", "How_Stated2", rowNum);
+			payPolicy_Amount3 = Double.parseDouble(reader.getCellData("PPT", "Amount3", rowNum));
+			payPolicy_HowStated3 = reader.getCellData("PPT", "How_Stated3", rowNum);
+			payPolicy_Amount4 = Double.parseDouble(reader.getCellData("PPT", "Amount4", rowNum));
+			payPolicy_HowStated4 = reader.getCellData("PPT", "How_Stated4", rowNum);
+			payPolicy_Amount5 = Double.parseDouble(reader.getCellData("PPT", "Amount5", rowNum));
+			payPolicy_HowStated5 = reader.getCellData("PPT", "How_Stated5", rowNum);
+			payPolicy_Element1 = reader.getCellData("PPT", "Element1", rowNum);
+			payPolicy_Element2 = reader.getCellData("PPT", "Element2", rowNum);
+			payPolicy_Element3 = reader.getCellData("PPT", "Element3", rowNum);
+			payPolicy_Element4 = reader.getCellData("PPT", "Element4", rowNum);
+			payPolicy_Element5 = reader.getCellData("PPT", "Element5", rowNum);
+			payPolicy_Currency = reader.getCellData("PPT", "Currency", rowNum);
+			payPolicy_CurrencyIndicator = reader.getCellData("PPT", "Currency_Indicator", rowNum);
+			payPolicy_VariableMapping1 = reader.getCellData("PPT", "Variable_Mapping1", rowNum);
+			payPolicy_ElementMapping1 = reader.getCellData("PPT", "Element_Mapping1", rowNum);
+			payPolicy_UsageMapping1 = reader.getCellData("PPT", "Usage_Mapping1", rowNum);
+			payPolicy_VariableMapping2 = reader.getCellData("PPT", "Variable_Mapping2", rowNum);
+			payPolicy_ElementMapping2 = reader.getCellData("PPT", "Element_Mapping2", rowNum);
+			payPolicy_UsageMapping2 = reader.getCellData("PPT", "Usage_Mapping2", rowNum);
+			payPolicy_VariableMapping3 = reader.getCellData("PPT", "Variable_Mapping3", rowNum);
+			payPolicy_ElementMapping3 = reader.getCellData("PPT", "Element_Mapping3", rowNum);
+			payPolicy_UsageMapping3 = reader.getCellData("PPT", "Usage_Mapping3", rowNum);
+			payPolicy_VariableMapping4 = reader.getCellData("PPT", "Variable_Mapping4", rowNum);
+			payPolicy_ElementMapping4 = reader.getCellData("PPT", "Element_Mapping4", rowNum);
+			payPolicy_UsageMapping4 = reader.getCellData("PPT", "Usage_Mapping4", rowNum);
+			payPolicy_VariableMapping5 = reader.getCellData("PPT", "Variable_Mapping5", rowNum);
+			payPolicy_ElementMapping5 = reader.getCellData("PPT", "Element_Mapping5", rowNum);
+			payPolicy_UsageMapping5 = reader.getCellData("PPT", "Usage_Mapping5", rowNum);
+			
+			
+			Object ob[] = {payPolicy_Name, payPolicy_BD, payPolicy_PL, payPolicy_PLS, payPolicy_Charge, payPolicy_Social, payPolicy_Hypo, payPolicy_TET, payPolicy_Variable1, payPolicy_Variable2, payPolicy_Variable3, payPolicy_Variable4, payPolicy_Variable5, payPolicy_SourceType, payPolicy_Amount1, payPolicy_HowStated1, payPolicy_Amount2, payPolicy_HowStated2, payPolicy_Amount3, payPolicy_HowStated3, payPolicy_Amount4, payPolicy_HowStated4, payPolicy_Amount5, payPolicy_HowStated5, payPolicy_Element1, payPolicy_Element2, payPolicy_Element3, payPolicy_Element4, payPolicy_Element5, payPolicy_Currency, payPolicy_CurrencyIndicator, payPolicy_VariableMapping1, payPolicy_ElementMapping1, payPolicy_UsageMapping1, payPolicy_VariableMapping2, payPolicy_ElementMapping2, payPolicy_UsageMapping2, payPolicy_VariableMapping3, payPolicy_ElementMapping3, payPolicy_UsageMapping3, payPolicy_VariableMapping4, payPolicy_ElementMapping4, payPolicy_UsageMapping4, payPolicy_VariableMapping5, payPolicy_ElementMapping5, payPolicy_UsageMapping5};
+			data.add(ob);
+			
+		}
+		return data;
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 }

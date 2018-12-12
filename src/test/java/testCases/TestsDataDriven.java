@@ -22,6 +22,7 @@ import pageObjects.PageAssignment;
 import pageObjects.PageCompImportLegacy;
 import pageObjects.PageLogin;
 import pageObjects.PageNewCompImport;
+import pageObjects.PagePayPolicy;
 import pageObjects.PagePolicies;
 
 public class TestsDataDriven {
@@ -154,6 +155,25 @@ public class TestsDataDriven {
 			pageLegacy.newCompImport(scenario, testFile);
 		}
 	
+	//------------------------Creación Pay Policy Template------------------------------------
+	
+	@DataProvider
+	public Iterator<Object[]> getDataPayPolicyTemplate()
+	{
+		ArrayList<Object[]> testData = DataDriven.dataReaderPayPolicyTemplate();
+		return testData.iterator();
+	}
+			
+	@Test(dataProvider="getDataPayPolicyTemplate")
+	public void newPPT(String payPolicyName, String payPolicyBD, String payPolicyPL, String payPolicyPLS, String payPolicyCharge, String payPolicySocial, String payPolicyHypo, String payPolicyTET, String var1, String var2, String var3, String var4, String var5, String srcType, double amount1, String howStated1, double amount2, String howStated2, double amount3, String howStated3, double amount4, String howStated4, double amount5, String howStated5, String elem1, String elem2, String elem3, String elem4, String elem5, String currency, String curIndicator, String varMapping1, String elemMapping1, String usageMapping1, String varMapping2, String elemMapping2, String usageMapping2, String varMapping3, String elemMapping3, String usageMapping3, String varMapping4, String elemMapping4, String usageMapping4, String varMapping5, String elemMapping5, String usageMapping5)
+	{
+		PagePayPolicy pagePPT = new PagePayPolicy(driver);
+		DataDriven.dataReaderPayPolicyTemplate();
+		pagePPT.newPayPolicyTemplate(payPolicyName, payPolicyBD, payPolicyPL, payPolicyPLS, payPolicyCharge, payPolicySocial, payPolicyHypo, payPolicyTET, var1, var2, var3, var4, var5, srcType, amount1, howStated1, amount2, howStated2, amount3, howStated3, amount4, howStated4, amount5, howStated5, elem1, elem2, elem3, elem4, elem5, currency, curIndicator, varMapping1, elemMapping1, usageMapping1, varMapping2, elemMapping2, usageMapping2, varMapping3, elemMapping3, usageMapping3, varMapping4, elemMapping4, usageMapping4, varMapping5, elemMapping5, usageMapping5);
+	}
+		
+
+		
 	//------------------------Pasos que se ejecutan siempre al final------------------------------------
 	@AfterMethod
 	public void tearDown()
