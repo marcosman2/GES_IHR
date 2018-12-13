@@ -19,6 +19,7 @@ import dataDriven.DataDriven;
 import pageObjects.PageAssignee;
 import pageObjects.PageAssigneePolicy;
 import pageObjects.PageAssignment;
+import pageObjects.PageBulkStatusUpdate;
 import pageObjects.PageCompImportLegacy;
 import pageObjects.PageLogin;
 import pageObjects.PageNewCompImport;
@@ -173,6 +174,24 @@ public class TestsDataDriven {
 	}
 		
 
+	//------------------------Bulk Status Update------------------------------------
+	
+	@DataProvider
+	public Iterator<Object[]> getDataBSU()
+	{
+		ArrayList<Object[]> testData = DataDriven.dataReaderBulkStatusUpdate();
+		return testData.iterator();
+	}
+	
+	@Test(dataProvider="getDataBSU")
+	public void bulkStatusUpdate(String lastName, String firstName, String policyName, String fromDate, String toDate, String changeStatus)
+	{
+		PageBulkStatusUpdate PageBSU = new PageBulkStatusUpdate(driver);
+		DataDriven.dataReaderBulkStatusUpdate();
+		PageBSU.searchRecordsBSU(lastName, firstName, policyName, fromDate, toDate, changeStatus);
+		PageBSU.firstPageBSU();
+	}
+	
 		
 	//------------------------Pasos que se ejecutan siempre al final------------------------------------
 	@AfterMethod

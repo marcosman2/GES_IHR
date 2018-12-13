@@ -7,6 +7,9 @@ import excelReader.Xls_Reader;
 public class DataDriven {
 	
 	static Xls_Reader reader;
+	
+	//Assignee Assignment Policy Variables
+	
 	public static String assigneeEffectiveDate;
 	public static String assigneeFirstName;
 	public static String assigneeSurname;
@@ -24,10 +27,13 @@ public class DataDriven {
 	public static String assignmentHomeOrganization;
 	public static String assignmentPayCycle;
 	public static String assignmentWorkLocation;
-	public static String assignmentTaxState;
+	public static String assignmentTaxState;	
 	public static String policyName;
 	public static String policyFrom;
 	public static String policyTo;
+	
+	//Policy Variables
+	
 	public static String policy_Name;
 	public static String policy_Currency;
 	public static String policy_From;
@@ -43,6 +49,9 @@ public class DataDriven {
 	public static String policy_Covar8;
 	public static String policy_Covar9;
 	public static String policy_Covar10;
+	
+	//Comp Import Variables
+	
 	public static String compImportLegacyScenario;
 	public static String compImportLegacyFile;
 	public static String newCompImportScenario;
@@ -96,6 +105,15 @@ public class DataDriven {
 	public static String payPolicy_VariableMapping5;
 	public static String payPolicy_ElementMapping5;
 	public static String payPolicy_UsageMapping5;
+	
+	//BSU Variables
+	
+	public static String bulkStatus_LastName;
+	public static String bulkStatus_FirstName;
+	public static String bulkStatus_Policy;
+	public static String bulkStatus_FromDate;
+	public static String bulkStatus_ToDate;
+	public static String bulkStatus_ChangeTo;
 	
 	
 	//-----------------------------MÉTODOS PARA LEER LOS DATOS DE EXCEL---------------------------------------------------------
@@ -386,13 +404,37 @@ public class DataDriven {
 			
 		}
 		return data;
-		
-		
-		
-		
-		
-		
-		
-		
+				
 	}
+	
+	//---------------------------Método para leer los datos del Bulk Status Update----------------------------------------
+	
+		public static ArrayList<Object[]> dataReaderBulkStatusUpdate()
+		{
+			ArrayList<Object[]> data = new ArrayList<Object[]>();
+			try
+			{
+			reader = new Xls_Reader("C:\\Users\\mamanrique\\eclipse-workspace\\IHR\\src\\test\\java\\helpers\\IHR_Data.xlsx");
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+			}
+			int rowCount = reader.getRowCount("BSU");
+			for (int rowNum = 2; rowNum<= rowCount; rowNum++)
+			{
+				
+				bulkStatus_LastName = reader.getCellData("BSU", "Last_Name", rowNum);
+				bulkStatus_FirstName = reader.getCellData("BSU", "First_Name", rowNum);
+				bulkStatus_Policy = reader.getCellData("BSU", "Policy", rowNum);
+				bulkStatus_FromDate = reader.getCellData("BSU", "From_Date", rowNum);
+				bulkStatus_ToDate = reader.getCellData("BSU", "To_Date", rowNum);
+				bulkStatus_ChangeTo = reader.getCellData("BSU", "Change_To", rowNum);
+				
+				Object ob[] = {bulkStatus_LastName, bulkStatus_FirstName, bulkStatus_Policy, bulkStatus_FromDate, bulkStatus_ToDate, bulkStatus_ChangeTo};
+				data.add(ob);
+				
+			}
+			return data;
+		}
 }

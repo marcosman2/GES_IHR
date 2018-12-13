@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="7" failures="0" name="testCases.TestsDataDriven" time="845.939" errors="0" skipped="0">
+<testsuite tests="5" failures="0" name="testCases.TestsDataDriven" time="72.814" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_181\jre\bin"/>
@@ -15,7 +15,7 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value=""/>
-    <property name="test" value="TestsDataDriven#newPPT"/>
+    <property name="test" value="TestsDataDriven#bulkStatusUpdate"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="user.dir" value="C:\Users\mamanrique\eclipse-workspace\IHR"/>
     <property name="java.runtime.version" value="1.8.0_181-b13"/>
@@ -47,7 +47,7 @@
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_181\jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test -Dtest=TestsDataDriven#newPPT"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test -Dtest=TestsDataDriven#bulkStatusUpdate"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -66,11 +66,9 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="testCases.TestsDataDriven" name="newPPT" time="148.767"/>
-  <testcase classname="testCases.TestsDataDriven" name="newPPT" time="131.003"/>
-  <testcase classname="testCases.TestsDataDriven" name="newPPT" time="117.751"/>
-  <testcase classname="testCases.TestsDataDriven" name="newPPT" time="121.457"/>
-  <testcase classname="testCases.TestsDataDriven" name="newPPT" time="108.184"/>
-  <testcase classname="testCases.TestsDataDriven" name="newPPT" time="109.443"/>
-  <testcase classname="testCases.TestsDataDriven" name="newPPT" time="109.334"/>
+  <testcase classname="testCases.TestsDataDriven" name="bulkStatusUpdate" time="15.203"/>
+  <testcase classname="testCases.TestsDataDriven" name="bulkStatusUpdate" time="14.464"/>
+  <testcase classname="testCases.TestsDataDriven" name="bulkStatusUpdate" time="14.394"/>
+  <testcase classname="testCases.TestsDataDriven" name="bulkStatusUpdate" time="14.344"/>
+  <testcase classname="testCases.TestsDataDriven" name="bulkStatusUpdate" time="14.409"/>
 </testsuite>
