@@ -2,6 +2,9 @@ package helpers;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -38,9 +41,10 @@ public class Helpers {
 	public void screenshotcapture(String prefix)
 	{
 		File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date()); 
 		try
 		{
-			FileUtils.copyFile(src, new File (prefix+System.currentTimeMillis()+".png"));
+			FileUtils.copyFile(src, new File (prefix+timeStamp+".png"));
 		}
 		catch(IOException e)
 		{

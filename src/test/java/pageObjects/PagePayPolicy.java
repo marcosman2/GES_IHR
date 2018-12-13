@@ -296,6 +296,9 @@ public class PagePayPolicy {
 		driver.findElement(closeAmountIcon).click();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		
+		
+		WebElement sourceLink2 = wait.until(ExpectedConditions.presenceOfElementLocated(source2Link));
+		helper.waitingTime(1);
 		driver.findElement(source2Link).click();
 		WebElement amountFrame2 = driver.findElement(By.xpath("//*[@id=\"jPopUpFrame\"]"));
 		driver.switchTo().frame(amountFrame2);
@@ -520,8 +523,17 @@ public class PagePayPolicy {
 				
 		driver.findElement(saveCompensationMappingButton).click();
 		//---------------------------------------------------------------------------------------------------------------------
-		WebElement savedMappings = wait.until(ExpectedConditions.visibilityOfElementLocated(savedCompensationMappingMessage));
-		helper.screenshotcapture("Mappings Added_");		
+		WebElement messageDisplayed = wait.until(ExpectedConditions.visibilityOfElementLocated(savedCompensationMappingMessage));
+		String message = messageDisplayed.getText();
+		if (message.equals("Compensation Mapping Saved Successfully."))
+		{
+			helper.screenshotcapture("Mappings Added_");
+		}
+		else
+		{
+			helper.screenshotcapture("ISSUE_Mappings Not Added_");
+		}
+				
 		
 	}
 }

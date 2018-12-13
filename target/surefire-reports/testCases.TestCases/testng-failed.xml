@@ -5,8 +5,9 @@
     <classes>
       <class name="testCases.TestCases">
         <methods>
+          <include name="tearDown"/>
           <include name="setUp"/>
-          <include name="bulkStatusUpd"/>
+          <include name="newPayPolicyTemplate"/>
         </methods>
       </class> <!-- testCases.TestCases -->
     </classes>

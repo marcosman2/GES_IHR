@@ -69,9 +69,9 @@ public class TestCases {
 	public void newAssigneeAssignmentPolicy()
 	{
 		PageAssignee pageAssignee = new PageAssignee(driver);
-		pageAssignee.newAssignee("1/1/2018", "Alejandro", "Ruiz", "5778454984", "115219180107581", "10/22/2000", "Argentina", "Buenos Aires");
+		pageAssignee.newAssignee("1/1/2018", "Julieta", "Manrique", "21102018", "22112019", "10/22/2000", "Argentina", "Buenos Aires");
 		PageAssignment pageAssignment = new PageAssignment(driver);
-		pageAssignment.newAssignment("Australia", "Business Trip", "1924731", "1/1/2018", "12/31/2018", "1/1/2018", "XYZ|", "Monthly", "AUSTRALIA", "Australia Capital Territory");
+		pageAssignment.newAssignment("Australia", "Business Trip", "1924785", "1/1/2018", "12/31/2018", "1/1/2018", "XYZ|", "Monthly", "AUSTRALIA", "Australia Capital Territory");
 		PageAssigneePolicy pageAssigneePolicy = new PageAssigneePolicy(driver);
 		pageAssigneePolicy.newAssigneeAssignmentPolicy("Big Policy", "1/1/2018", "12/31/2018");
 	}
@@ -82,7 +82,7 @@ public class TestCases {
 	public void newPolicy()
 	{
 		PagePolicies pagePolicies = new PagePolicies(driver);
-		pagePolicies.newPolicy("U.S. Inbound", "United States Dollar", "1/1/2018", "12/31/2018", "10", "Net Pay", "zzzAlimony Received", "zzzAnnual Paid Premium", "zzzAnnuities", "zzzAuto Loan Advance", "zzzAutomobile Expense", "zzzBase Salary", "zzzBonus - Current Year", "zzzEducation Trip", "zzzEntertainment Allowance");
+		pagePolicies.newPolicy("CO Inbound", "United States Dollar", "1/1/2018", "12/31/2018", "10", "Net Pay", "zzzAlimony Received", "zzzAnnual Paid Premium", "zzzAnnuities", "zzzAuto Loan Advance", "zzzAutomobile Expense", "zzzBase Salary", "zzzBonus - Current Year", "zzzEducation Trip", "zzzEntertainment Allowance");
 	}
 	
 	//------------------------------Comp Import Legacy--------------------------------------------------------
@@ -101,14 +101,13 @@ public class TestCases {
 		pageNewCompImport.newCompImport("Successfully", "C:/Users/mamanrique/Desktop/NewCompImportAutomated_Grouping.xlsx");
 	}
 	
-	//------------------------------New Comp Import--------------------------------------------------------
+	//------------------------------Pay Policy Template--------------------------------------------------------
 	@Test
 	public void newPayPolicyTemplate()
 	{
 		PagePayPolicy pagePP = new PagePayPolicy(driver);
-		pagePP.newPayPolicyTemplate("Automate91", "5/18/2018", "United States", "FPE PLS", "Home", "Both", "HOME", "New From Issue", "NETPY", "EXTPY", "AUTLS", "DEPTR", "BONCY", "Fixed Amount", 5000, "Semi-Monthly", 2500.5, "Weekly", 1000, "Annually", 700, "Bi-Monthly", 1200, "Quarterly", "DEPTR", "AUTLS", "BONUS", "RTMTN", "HHRCO", "United States Dollar", "HOME", "AUTLS - zzzAutomobile Leasing", "AUTLS - Automobile Leasing", "Both", "BONCY - zzzBonus - Current Year", "BONUS - Bonus - Current Year", "Both", "DEPTR - zzzEducation Trip", "DEPTR - Education Trip", "Both", "EXTPY - External System", "HHRCO - Host Housing - Rented by Company", "Both", "NETPY - Net Pay", "RTMTN - Rental Maintenance", "Both");
+		pagePP.newPayPolicyTemplate("Automate97", "5/18/2018", "United States", "FPE PLS", "Home", "Both", "HOME", "New From Issue", "NETPY", "EXTPY", "AUTLS", "DEPTR", "BONCY", "Fixed Amount", 5000, "Semi-Monthly", 2500.5, "Weekly", 1000, "Annually", 700, "Bi-Monthly", 1200, "Quarterly", "DEPTR", "AUTLS", "BONUS", "RTMTN", "HHRCO", "United States Dollar", "HOME", "AUTLS - zzzAutomobile Leasing", "AUTLS - Automobile Leasing", "Both", "BONCY - zzzBonus - Current Year", "BONUS - Bonus - Current Year", "Both", "DEPTR - zzzEducation Trip", "DEPTR - Education Trip", "Both", "EXTPY - External System", "HHRCO - Host Housing - Rented by Company", "Both", "NETPY - Net Pay", "RTMTN - Rental Maintenance", "Both");
 	}	
-	
 	
 	//-----------------------------Bulk Status Update----------------------------------------------
 	@Test
@@ -125,17 +124,14 @@ public class TestCases {
 		PageBulkStatusUpdate pageBSU = new PageBulkStatusUpdate(driver);
 		pageBSU.searchRecordsBSU("Juan", "Diaz", "2010 - 2030", "1/1/2018", "12/31/2018", "Reviewed");
 		pageBSU.secondPageBSU();
-	}
-	
-	
+	}	
 	
 	//-------------------------Pasos que se ejecutan siempre al final-----------------------------------------------------------
-	/*@AfterMethod
+	@AfterMethod
 	public void tearDown()
 	{
 		Helpers helper = new Helpers (driver);
 		helper.waitingTime(2);
-		//helper.screenshotcapture("Finished_");
 		driver.quit();
-	}*/
+	}
 }

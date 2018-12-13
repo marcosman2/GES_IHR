@@ -1,233 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="7" total="12" passed="5">
+<testng-results skipped="0" failed="0" ignored="8" total="9" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="testCases.TestsDataDriven" duration-ms="187864" started-at="2018-12-13T11:51:04Z" finished-at="2018-12-13T11:54:12Z">
+  <suite name="testCases.TestCases" duration-ms="137621" started-at="2018-12-13T15:43:08Z" finished-at="2018-12-13T15:45:26Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="187864" started-at="2018-12-13T11:51:04Z" finished-at="2018-12-13T11:54:12Z">
-      <class name="testCases.TestsDataDriven">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:testCases.TestsDataDriven@614c5515]" name="setUp" is-config="true" duration-ms="32331" started-at="2018-12-13T11:51:08Z" finished-at="2018-12-13T11:51:40Z">
+    <test name="Command line test" duration-ms="137621" started-at="2018-12-13T15:43:08Z" finished-at="2018-12-13T15:45:26Z">
+      <class name="testCases.TestCases">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:testCases.TestCases@3f2a3a5]" name="setUp" is-config="true" duration-ms="7095" started-at="2018-12-13T15:43:08Z" finished-at="2018-12-13T15:43:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="bulkStatusUpdate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testCases.TestsDataDriven@614c5515]" name="bulkStatusUpdate" duration-ms="15202" started-at="2018-12-13T11:51:40Z" data-provider="getDataBSU" finished-at="2018-12-13T11:51:56Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Juan]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[2010 - 2030]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[2/1/2018]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[6/30/2018]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Reviewed]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="PASS" signature="newPayPolicyTemplate()[pri:0, instance:testCases.TestCases@3f2a3a5]" name="newPayPolicyTemplate" duration-ms="127754" started-at="2018-12-13T15:43:15Z" finished-at="2018-12-13T15:45:23Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- bulkStatusUpdate -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:testCases.TestsDataDriven@614c5515]" name="tearDown" is-config="true" duration-ms="2714" started-at="2018-12-13T11:51:56Z" finished-at="2018-12-13T11:51:58Z">
+        </test-method> <!-- newPayPolicyTemplate -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testCases.TestCases@3f2a3a5]" name="tearDown" is-config="true" duration-ms="2742" started-at="2018-12-13T15:45:23Z" finished-at="2018-12-13T15:45:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:testCases.TestsDataDriven@614c5515]" name="setUp" is-config="true" duration-ms="27261" started-at="2018-12-13T11:51:58Z" finished-at="2018-12-13T11:52:26Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="bulkStatusUpdate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testCases.TestsDataDriven@614c5515]" name="bulkStatusUpdate" duration-ms="14463" started-at="2018-12-13T11:52:26Z" data-provider="getDataBSU" finished-at="2018-12-13T11:52:40Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Diaz]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[2010 - 2030]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[2/1/2018]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[6/30/2018]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Updated]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- bulkStatusUpdate -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:testCases.TestsDataDriven@614c5515]" name="tearDown" is-config="true" duration-ms="2681" started-at="2018-12-13T11:52:40Z" finished-at="2018-12-13T11:52:43Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:testCases.TestsDataDriven@614c5515]" name="setUp" is-config="true" duration-ms="27048" started-at="2018-12-13T11:52:43Z" finished-at="2018-12-13T11:53:10Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="bulkStatusUpdate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testCases.TestsDataDriven@614c5515]" name="bulkStatusUpdate" duration-ms="14394" started-at="2018-12-13T11:53:10Z" data-provider="getDataBSU" finished-at="2018-12-13T11:53:24Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Juan]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[2010 - 2030]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[2/1/2018]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[6/30/2018]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Reviewed]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- bulkStatusUpdate -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:testCases.TestsDataDriven@614c5515]" name="tearDown" is-config="true" duration-ms="2651" started-at="2018-12-13T11:53:24Z" finished-at="2018-12-13T11:53:27Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:testCases.TestsDataDriven@614c5515]" name="setUp" is-config="true" duration-ms="5528" started-at="2018-12-13T11:53:27Z" finished-at="2018-12-13T11:53:32Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="bulkStatusUpdate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testCases.TestsDataDriven@614c5515]" name="bulkStatusUpdate" duration-ms="14344" started-at="2018-12-13T11:53:32Z" data-provider="getDataBSU" finished-at="2018-12-13T11:53:47Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Diaz]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[2010 - 2030]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[2/1/2018]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[6/30/2018]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Updated]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- bulkStatusUpdate -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:testCases.TestsDataDriven@614c5515]" name="tearDown" is-config="true" duration-ms="2654" started-at="2018-12-13T11:53:47Z" finished-at="2018-12-13T11:53:49Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:testCases.TestsDataDriven@614c5515]" name="setUp" is-config="true" duration-ms="5248" started-at="2018-12-13T11:53:49Z" finished-at="2018-12-13T11:53:55Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="bulkStatusUpdate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testCases.TestsDataDriven@614c5515]" name="bulkStatusUpdate" duration-ms="14408" started-at="2018-12-13T11:53:55Z" data-provider="getDataBSU" finished-at="2018-12-13T11:54:09Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Juan]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[2010 - 2030]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[2/1/2018]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[6/30/2018]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Reviewed]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- bulkStatusUpdate -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:testCases.TestsDataDriven@614c5515]" name="tearDown" is-config="true" duration-ms="2680" started-at="2018-12-13T11:54:09Z" finished-at="2018-12-13T11:54:12Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- testCases.TestsDataDriven -->
+      </class> <!-- testCases.TestCases -->
     </test> <!-- Command line test -->
-  </suite> <!-- testCases.TestsDataDriven -->
+  </suite> <!-- testCases.TestCases -->
 </testng-results>

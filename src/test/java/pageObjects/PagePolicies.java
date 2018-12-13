@@ -51,6 +51,7 @@ public class PagePolicies {
 	private By activeCovarCheck9;
 	private By activeCovarCheck10;
 	private By savePolicyButton;
+	private By savedMessage;
 	
 	public PagePolicies(WebDriver driver)
 	{
@@ -88,6 +89,7 @@ public class PagePolicies {
 		this.activeCovarCheck9 = By.id("ctl00_ctl00_ctl00_ctl00_Main_MainContent_MainContent_MainContent_DetailsDataGrid_ctl11_CbActive");
 		this.activeCovarCheck10 = By.id("ctl00_ctl00_ctl00_ctl00_Main_MainContent_MainContent_MainContent_DetailsDataGrid_ctl12_CbActive");
 		this.savePolicyButton = By.id("ctl00_ctl00_ctl00_ctl00_Main_MainContent_MainContent_MainContent_SaveImageButton");
+		this.savedMessage = By.xpath("//*[@id=\"ctl00_ctl00_ctl00_ctl00_Main_MainContent_MainContent_MainContent_policyvalidationSummary\"]/ul/li");
 	}
 	
 	//----------------------------------------MÉTODO PARA CREAR UN NUEVO POLICY------------------------------------------------------------------------
@@ -220,6 +222,16 @@ public class PagePolicies {
 		}catch(NoSuchElementException e){}
 		
 		driver.findElement(savePolicyButton).click();
+		WebElement messageDisplayed = wait.until(ExpectedConditions.visibilityOfElementLocated(savedMessage));
+		String message = messageDisplayed.getText();		
+		if (message.equals("Save completed successfully."))
+			{
+				helper.screenshotcapture("Policy Created_");
+			}
+			else
+			{
+				helper.screenshotcapture("ISSUE_Policy Not Created_");
+			}
 	}
 
 }
