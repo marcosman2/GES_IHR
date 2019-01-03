@@ -47,6 +47,8 @@ public class PageAssignee {
 		this.messageDisplayedLabel = By.id("validationSummary1");
 	}
 	
+	//-------------------------------------New Assignee Creation Method------------------------------------------------------------------------ 
+	
 	public void newAssignee(String effectiveDate, String firstName, String surname, String socialNumber, String idNumber, String dob, String homeCountry, String homeState)
 	{
 		WebDriverWait wait = new WebDriverWait(driver, 60);

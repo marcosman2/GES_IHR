@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: testCases.TestCases
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 138.088 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 109.8 sec

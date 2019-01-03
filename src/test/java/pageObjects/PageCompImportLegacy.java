@@ -27,6 +27,8 @@ public class PageCompImportLegacy {
 		this.messageDisplayedLabel = By.xpath("//*[@id=\"ctl00_ctl00_ctl00_ctl00_Main_MainContent_MainContent_MainContent_compImport_validationSummaryComensation\"]/ul/li");
 	}
 	
+	//-------------------------------Comp Import Legacy Method----------------------------------------------------------------------
+	
 	public void compImportLegacy(String scenario, String testFile)
 	{
 		WebDriverWait wait = new WebDriverWait(driver, 60);

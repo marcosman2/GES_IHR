@@ -33,6 +33,8 @@ public class PageAssigneePolicy {
 		this.policyMessageLabel = By.xpath("//*[@id=\"ctl00_ctl00_ctl00_ctl00_Main_MainContent_MainContent_MainContent_ValidationSummary\"]/ul/li");
 	}
 	
+	//----------------------------Association of a Policy to an Assignee-Assignment Method-----------------------------------------------
+	
 	public void newAssigneeAssignmentPolicy(String policyName, String fromDate, String toDate)
 	{
 		driver.findElement(assigneePolicyLink).click();

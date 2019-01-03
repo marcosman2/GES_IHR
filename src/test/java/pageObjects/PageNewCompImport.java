@@ -53,6 +53,8 @@ public class PageNewCompImport {
 		processingMessageDisplayedLabel = By.xpath("//*[@id=\"ProcessingText\"]/td");
 	}
 	
+	//-------------------------------------New Comp Import Method-------------------------------------------------------------
+	
 	public void newCompImport(String scenario, String testFile)
 	{
 		Helpers helper = new Helpers(driver);

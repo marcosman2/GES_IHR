@@ -25,7 +25,7 @@ import pageObjects.PagePolicies;
 public class TestCases {
 
 	private WebDriver driver;
-	//----------------------Pasos que se ejecutan siempre al inicio----------------------------
+	//----------------------Initial Steps----------------------------
 	
 	@BeforeMethod
 	public void setUp()
@@ -45,7 +45,7 @@ public class TestCases {
 	//-------------------------------TEST CASES-----------------------------------------------------
 	
 	
-	//------------------------------Creación de Assignee--------------------------------------------------------
+	//------------------------------New Assignee--------------------------------------------------------
 	@Test
 	public void newAssignee()
 	{
@@ -54,7 +54,7 @@ public class TestCases {
 	}
 	
 	
-	//------------------------------Creación de Assignee Assignment--------------------------------------------------------
+	//------------------------------New Assignee-Assignment--------------------------------------------------------
 	@Test
 	public void newAssigneeAssignment()
 	{
@@ -64,12 +64,12 @@ public class TestCases {
 			pageAssignment.newAssignment("Australia", "Business Trip", "2924731", "1/1/2018", "12/31/2018", "1/1/2018", "Org ONe|XYZ|", "Monthly", "AUSTRALIA", "Australia Capital Territory");
 	}
 	
-	//------------------------------Creación de Assignee Assignment Policy--------------------------------------------------------
+	//------------------------------Assignee-Assignment Policy--------------------------------------------------------
 	@Test
 	public void newAssigneeAssignmentPolicy()
 	{
 		PageAssignee pageAssignee = new PageAssignee(driver);
-		pageAssignee.newAssignee("1/1/2018", "Julieta", "Manrique", "21102018", "22112019", "10/22/2000", "Argentina", "Buenos Aires");
+		pageAssignee.newAssignee("1/1/2018", "Julio", "Manrique", "21102759", "221120489", "10/22/2000", "Argentina", "Buenos Aires");
 		PageAssignment pageAssignment = new PageAssignment(driver);
 		pageAssignment.newAssignment("Australia", "Business Trip", "1924785", "1/1/2018", "12/31/2018", "1/1/2018", "XYZ|", "Monthly", "AUSTRALIA", "Australia Capital Territory");
 		PageAssigneePolicy pageAssigneePolicy = new PageAssigneePolicy(driver);
@@ -77,7 +77,7 @@ public class TestCases {
 	}
 	
 	
-	//------------------------------Creación de Policy--------------------------------------------------------
+	//------------------------------New Policy--------------------------------------------------------
 	@Test
 	public void newPolicy()
 	{
@@ -101,7 +101,7 @@ public class TestCases {
 		pageNewCompImport.newCompImport("Successfully", "C:/Users/mamanrique/Desktop/NewCompImportAutomated_Grouping.xlsx");
 	}
 	
-	//------------------------------Pay Policy Template--------------------------------------------------------
+	//------------------------------New Pay Policy Template--------------------------------------------------------
 	@Test
 	public void newPayPolicyTemplate()
 	{
@@ -126,7 +126,7 @@ public class TestCases {
 		pageBSU.secondPageBSU();
 	}	
 	
-	//-------------------------Pasos que se ejecutan siempre al final-----------------------------------------------------------
+	//-------------------------Final Steps-----------------------------------------------------------
 	@AfterMethod
 	public void tearDown()
 	{

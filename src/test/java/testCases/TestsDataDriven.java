@@ -30,6 +30,8 @@ public class TestsDataDriven {
 	
 	private WebDriver driver;
 	
+	//------------------------Initial Steps------------------------------------------------------------
+	
 	@BeforeMethod
 	public void setUp()
 	{
@@ -47,7 +49,7 @@ public class TestsDataDriven {
 
 	//********************************DATA DRIVEN TEST CASES*********************************************
 	
-	//--------------------------Creación de Assignee-----------------------------------
+	//--------------------------New Assignee-----------------------------------
 	
 	@DataProvider
 	public Iterator<Object[]> getDataAssignee()
@@ -64,7 +66,7 @@ public class TestsDataDriven {
 		pageAssignee.newAssignee(effectiveDate, firstName, surname, social, id, dob, homeCntry, homeSt);		
 	}
 	
-	//-----------------Creación de Assignee Assignment--------------------------------
+	//-----------------New Assignee-Assignment--------------------------------
 	
 	@DataProvider
 	public Iterator<Object[]> getDataAssigneeAssignment()
@@ -84,7 +86,7 @@ public class TestsDataDriven {
 	}
 	
 	
-	//-----------------Creación de Assignee Assignment y Asociación de Policy--------------------------------
+	//-----------------Assignee-Assignment Policy--------------------------------
 	
 	@DataProvider
 	public Iterator<Object[]> getDataAssigneeAssignmentPolicy()
@@ -105,7 +107,7 @@ public class TestsDataDriven {
 		pageAssigneePolicy.newAssigneeAssignmentPolicy(policy, policyFrom, policyTo);		
 	}
 	
-	//-----------------------Creación de Policy-------------------------------------------
+	//-----------------------New Policy-------------------------------------------
 	
 	@DataProvider
 	public Iterator<Object[]> getDataPolicy()
@@ -156,7 +158,7 @@ public class TestsDataDriven {
 			pageLegacy.newCompImport(scenario, testFile);
 		}
 	
-	//------------------------Creación Pay Policy Template------------------------------------
+	//------------------------New Pay Policy Template------------------------------------
 	
 	@DataProvider
 	public Iterator<Object[]> getDataPayPolicyTemplate()
@@ -193,13 +195,12 @@ public class TestsDataDriven {
 	}
 	
 		
-	//------------------------Pasos que se ejecutan siempre al final------------------------------------
+	//------------------------Final Steps------------------------------------
 	@AfterMethod
 	public void tearDown()
 	{
 		Helpers helper = new Helpers (driver);
 		helper.waitingTime(2);
-		//helper.screenshotcapture("Finished_");
 		driver.quit();
 	}
 

@@ -202,7 +202,7 @@ public class PagePayPolicy {
 		this.savedCompensationMappingMessage = By.xpath("//*[@id=\"ctl00_ctl00_ctl00_ctl00_Main_MainContent_MainContent_MainContent_pageValidationSummary\"]");
 	}
 	
-	//----------------------------------------MÉTODO PARA CREAR UN NUEVO PAY POLICY TEMPLATE------------------------------------------
+	//----------------------------------------New Pay Policy Template Method------------------------------------------
 
 	public void newPayPolicyTemplate(String payPolicyName, String payPolicyBD, String payPolicyPL, String payPolicyPLS, String payPolicyCharge, String payPolicySocial, String payPolicyHypo, String payPolicyTET, String var1, String var2, String var3, String var4, String var5, String srcType, double amount1, String howStated1, double amount2, String howStated2, double amount3, String howStated3, double amount4, String howStated4, double amount5, String howStated5, String elem1, String elem2, String elem3, String elem4, String elem5, String currency, String curIndicator, String varMapping1, String elemMapping1, String usageMapping1, String varMapping2, String elemMapping2, String usageMapping2, String varMapping3, String elemMapping3, String usageMapping3, String varMapping4, String elemMapping4, String usageMapping4, String varMapping5, String elemMapping5, String usageMapping5)
 	{

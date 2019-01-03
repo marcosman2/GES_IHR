@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="8" total="9" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="testCases.TestCases" duration-ms="137621" started-at="2018-12-13T15:43:08Z" finished-at="2018-12-13T15:45:26Z">
+  <suite name="testCases.TestCases" duration-ms="108961" started-at="2019-01-03T13:37:55Z" finished-at="2019-01-03T13:39:44Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="137621" started-at="2018-12-13T15:43:08Z" finished-at="2018-12-13T15:45:26Z">
+    <test name="Command line test" duration-ms="108961" started-at="2019-01-03T13:37:55Z" finished-at="2019-01-03T13:39:44Z">
       <class name="testCases.TestCases">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:testCases.TestCases@3f2a3a5]" name="setUp" is-config="true" duration-ms="7095" started-at="2018-12-13T15:43:08Z" finished-at="2018-12-13T15:43:15Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:testCases.TestCases@3f2a3a5]" name="setUp" is-config="true" duration-ms="38399" started-at="2019-01-03T13:37:55Z" finished-at="2019-01-03T13:38:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="newPayPolicyTemplate()[pri:0, instance:testCases.TestCases@3f2a3a5]" name="newPayPolicyTemplate" duration-ms="127754" started-at="2018-12-13T15:43:15Z" finished-at="2018-12-13T15:45:23Z">
+        <test-method status="PASS" signature="newAssigneeAssignmentPolicy()[pri:0, instance:testCases.TestCases@3f2a3a5]" name="newAssigneeAssignmentPolicy" duration-ms="67795" started-at="2019-01-03T13:38:33Z" finished-at="2019-01-03T13:39:41Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- newPayPolicyTemplate -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:testCases.TestCases@3f2a3a5]" name="tearDown" is-config="true" duration-ms="2742" started-at="2018-12-13T15:45:23Z" finished-at="2018-12-13T15:45:26Z">
+        </test-method> <!-- newAssigneeAssignmentPolicy -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testCases.TestCases@3f2a3a5]" name="tearDown" is-config="true" duration-ms="2735" started-at="2019-01-03T13:39:41Z" finished-at="2019-01-03T13:39:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

@@ -48,6 +48,8 @@ public class PageAssignment {
 		this.assignmentMessageLabel = By.xpath("//*[@id=\"ctl00_ctl00_ctl00_ctl00_ctl00_Main_MainContent_MainContent_MainContent_MainContent_validationSummary\"]/ul/li");
 	}
 	
+	//-----------------------------------New Assignment Creation Method-------------------------------------------------------------
+	
 	public void newAssignment(String assignmentName, String assignmentType, String assignmentIdent, String estimatedBegin, String estimatedEnd, String actualBegin, String homeOrg, String payCycle, String workLocation, String taxState)
 	{
 		driver.findElement(AssigmentlistLink).click();

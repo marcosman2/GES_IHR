@@ -18,6 +18,8 @@ public class PageLogin {
 		this.loginButton = By.id("LoginImageButton");
 	}
 	
+	//-------------------Log into IHR-------------------------------
+	
 	public void login(String user, String password)
 	{
 		driver.findElement(userField).clear();

@@ -92,7 +92,7 @@ public class PagePolicies {
 		this.savedMessage = By.xpath("//*[@id=\"ctl00_ctl00_ctl00_ctl00_Main_MainContent_MainContent_MainContent_policyvalidationSummary\"]/ul/li");
 	}
 	
-	//----------------------------------------MÉTODO PARA CREAR UN NUEVO POLICY------------------------------------------------------------------------
+	//----------------------------------------New Policy Method------------------------------------------------------------------------
 	
 	public void newPolicy(String policy, String currency, String beginDate, String endDate, String covarNumber, String covar1, String covar2, String covar3, String covar4, String covar5, String covar6, String covar7, String covar8, String covar9, String covar10)
 	{
@@ -132,6 +132,8 @@ public class PagePolicies {
 		driver.findElement(activeCheck).click();
 		helper.screenshotcapture("Policy Information_");
 		driver.findElement(covarNumberDrop).clear();
+		
+		//--------------------------Adding Covars------------------------------------
 		driver.findElement(covarNumberDrop).sendKeys(covarNumber);
 		helper.waitingTime(2);
 		driver.findElement(covarNumberDrop).sendKeys(Keys.TAB);
@@ -222,6 +224,7 @@ public class PagePolicies {
 		}catch(NoSuchElementException e){}
 		
 		driver.findElement(savePolicyButton).click();
+		//---------------------------------------------------------------------------------------------------------------
 		WebElement messageDisplayed = wait.until(ExpectedConditions.visibilityOfElementLocated(savedMessage));
 		String message = messageDisplayed.getText();		
 		if (message.equals("Save completed successfully."))
